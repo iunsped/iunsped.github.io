@@ -1,0 +1,255 @@
+<!DOCTYPE HTML>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="expires" content="0">
+  
+  <title>x64加载内核符号解析地址 | 清心小筑</title>
+  <meta name="author" content="Unsped">
+  
+  <meta name="description" content="我的一个博客，资料记录。">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="x64加载内核符号解析地址">
+  <meta property="og:site_name" content="清心小筑">
+
+  
+    <meta property="og:image" content>
+  
+
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-70812759-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?cb5448498d7169c668b07c2b255d62c1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+</head>
+</html>
+ <body>  
+  <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+	  <a class="navbar-brand" href="/">清心小筑</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/archives" title="All the articles.">
+			  <i class=""></i>Archives
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/categories" title="All the categories.">
+			  <i class=""></i>Categories
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags" title="All the tags.">
+			  <i class=""></i>Tags
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/about" title="About me.">
+			  <i class=""></i>About
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/atom.xml" title="Subscribe me.">
+			  <i class=""></i>RSS
+			</a>
+		  </li>
+		  
+		</ul>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
+
+  <div class="container">
+  	<div class="content">
+    	 
+
+
+	
+		<div class="page-header">
+			<h1> x64加载内核符号解析地址</h1>
+		</div>
+	
+
+
+
+<div class="row post">
+	<!-- cols -->
+	
+	<div id="top_meta"></div>
+	<div class="col-md-9">
+	
+
+	<!-- content -->
+	<div class="mypage">		
+	  		
+
+	  <p>工程要编译成x64位的。</p>
+<p>还需要两个DLL  dbghelp.dll   symsrv.dll  和编译生成的EXE放在一起 （在windbg目录有这俩个DLL）</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;Windows.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;psapi.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"dbghelp.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> comment(lib,<span class="meta-string">"dbghelp.lib"</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="function">BOOL CALLBACK <span class="title">EnumSymCallBack</span><span class="params">(PSYMBOL_INFO pSymInfo, ULONG SymbolSize, PVOID UserContext)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (<span class="built_in">strcmp</span>((pSymInfo-&gt;Name), <span class="string">"PspCreateProcessNotifyRoutine"</span>) == <span class="number">0</span> ||</span><br><span class="line">    <span class="built_in">strcmp</span>((pSymInfo-&gt;Name), <span class="string">"PspLoadImageNotifyRoutine"</span>)     == <span class="number">0</span> ||</span><br><span class="line">    <span class="built_in">strcmp</span>((pSymInfo-&gt;Name), <span class="string">"PspCreateThreadNotifyRoutine"</span>)  == <span class="number">0</span>)</span><br><span class="line">  &#123;</span><br><span class="line">      <span class="built_in">printf</span>(<span class="string">"%-30s :%p\n"</span>, pSymInfo-&gt;Name, pSymInfo-&gt;Address);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> TRUE;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="built_in">std</span>::<span class="built_in">string</span> strMod;</span><br><span class="line">  PVOID dwBaseAddr = <span class="number">0</span>;</span><br><span class="line">  PVOID pDrvAddr[<span class="number">128</span>*<span class="number">8</span>];</span><br><span class="line">  DWORD dwcbNeeded = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">if</span> (EnumDeviceDrivers(pDrvAddr,<span class="keyword">sizeof</span>(pDrvAddr),&amp;dwcbNeeded))</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">unsigned</span> <span class="keyword">int</span> i=<span class="number">0</span> ; i&lt;(dwcbNeeded/<span class="number">8</span>) ; i++)</span><br><span class="line">    &#123;</span><br><span class="line">      LPSTR chDrvName[MAX_PATH];</span><br><span class="line">      GetDeviceDriverBaseNameA(pDrvAddr[i],(LPSTR)chDrvName,MAX_PATH);</span><br><span class="line">      dwBaseAddr = pDrvAddr[i];</span><br><span class="line">      strMod = <span class="built_in">std</span>::<span class="built_in">string</span>((<span class="keyword">char</span>*)chDrvName);</span><br><span class="line">      <span class="built_in">printf</span>(<span class="string">"%-20s 0x%p\n"</span>,strMod.c_str(),dwBaseAddr);</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  SymSetOptions(SYMOPT_DEFERRED_LOADS);</span><br><span class="line">  HANDLE hProcess = GetCurrentProcess();</span><br><span class="line">  SymInitialize(hProcess, <span class="number">0</span>, FALSE);</span><br><span class="line">  <span class="built_in">std</span>::<span class="built_in">string</span> strSymbolPath = <span class="string">"srv*C:\\Windows\\symbols*http://msdl.microsoft.com/download/symbols"</span>;</span><br><span class="line">  <span class="built_in">std</span>::<span class="built_in">string</span> strSystemPath = <span class="string">"C:\\Windows\\System32\\"</span> + strMod;</span><br><span class="line">  SymSetSearchPath(hProcess, strSymbolPath.c_str());</span><br><span class="line">  HANDLE hSystemFile = CreateFileA(strSystemPath.c_str(), GENERIC_READ, FILE_SHARE_READ | FILE_SHARE_WRITE,</span><br><span class="line">    <span class="literal">NULL</span>, OPEN_EXISTING, <span class="number">0</span>, <span class="literal">NULL</span>);</span><br><span class="line">  DWORD dwFileSize = GetFileSize(hSystemFile, <span class="literal">NULL</span>);</span><br><span class="line">  DWORD64  dwBase = SymLoadModule64(hProcess, <span class="literal">NULL</span>, strSystemPath.c_str(), <span class="literal">NULL</span>, (DWORD64)dwBaseAddr, dwFileSize);</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">"正在枚举符号...\n"</span>);</span><br><span class="line">  SymEnumSymbols(hProcess, dwBase, <span class="number">0</span>, EnumSymCallBack, <span class="number">0</span>);</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">"枚举符号结束...\n"</span>);</span><br><span class="line">  SymUnloadModule64(hProcess, dwBase);</span><br><span class="line">  SymCleanup(hProcess);</span><br><span class="line">  system(<span class="string">"pause"</span>);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+	  
+	</div>
+
+	<div>
+  	<center>
+	<div class="pagination">
+
+    
+    
+    <a href="/2017/12/15/debugwin10/" type="button" class="btn btn-default"><i
+                class="fa fa-arrow-circle-o-left"></i> 上一页</a>
+    
+
+    <a href="/" type="button" class="btn btn-default"><i class="fa fa-home"></i>Home</a>
+    
+    <a href="/2017/12/13/befile/" type="button" class="btn btn-default ">下一页<i
+                class="fa fa-arrow-circle-o-right"></i></a>
+    
+
+    
+</div>
+
+    </center>
+	</div>
+	
+	<!-- comment -->
+	
+<section id="comment">
+    <h2 class="title">留言</h2>
+
+    
+</section>
+
+
+	</div> <!-- col-md-9/col-md-12 -->
+		
+	
+	<div id="side_meta">
+		<div class="col-md-3" id="post_meta"> 
+
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2017-12-13 
+	</div>
+	
+
+	<!-- categories -->
+    
+
+	<!-- tags -->
+	
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
+    <ul id="tags" class="tag_box list-unstyled collapse in">	  
+	    
+  <li><a href="/tags/debug/">debug<span>11</span></a></li> <li><a href="/tags/kernel/">kernel<span>9</span></a></li>
+    </ul>
+	</div>
+		
+
+	<!-- toc -->
+	<div class="meta-widget">
+	
+	</div>
+	
+    <hr>
+	
+</div><!-- col-md-3 -->
+
+	</div>
+		
+
+</div><!-- row -->
+
+
+
+	</div>
+  </div>
+  <div class="container-narrow">
+  <footer> <p>
+&#169; 2001 Unsped
+</a>
+</p>
+
+ </footer>
+</div> <!-- container-narrow -->
+  
+
+
+  
+<a id="gotop" href="#">   
+  <span>⬆︎TOP</span>
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script> 
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+</body>
+   </html>

@@ -1,0 +1,549 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>清心小筑</title>
+  
+  <subtitle>清心小筑</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://blog.dedbg.com/"/>
+  <updated>2020-12-26T03:34:57.800Z</updated>
+  <id>http://blog.dedbg.com/</id>
+  
+  <author>
+    <name>Unsped</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>win10-subsystem 修改安装目录</title>
+    <link href="http://blog.dedbg.com/2020/12/26/win10-wsl/"/>
+    <id>http://blog.dedbg.com/2020/12/26/win10-wsl/</id>
+    <published>2020-12-26T14:53:23.000Z</published>
+    <updated>2020-12-26T03:34:57.800Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;ul&gt;
+&lt;li&gt;不要运行大任务！ 不然会后悔的！ win10 subsystem for ubuntu 16.04!&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span
+        
+      
+    
+    </summary>
+    
+    
+      <category term="linux" scheme="http://blog.dedbg.com/tags/linux/"/>
+    
+      <category term="ubuntu" scheme="http://blog.dedbg.com/tags/ubuntu/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>laravel 环境配置</title>
+    <link href="http://blog.dedbg.com/2019/06/09/laravel-config/"/>
+    <id>http://blog.dedbg.com/2019/06/09/laravel-config/</id>
+    <published>2019-06-08T18:12:27.000Z</published>
+    <updated>2020-12-26T03:19:00.487Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;figure class=&quot;highlight cmd&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span
+        
+      
+    
+    </summary>
+    
+    
+      <category term="php" scheme="http://blog.dedbg.com/tags/php/"/>
+    
+      <category term="laravel" scheme="http://blog.dedbg.com/tags/laravel/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>vs.github</title>
+    <link href="http://blog.dedbg.com/2018/12/24/vs-github/"/>
+    <id>http://blog.dedbg.com/2018/12/24/vs-github/</id>
+    <published>2018-12-23T17:29:54.000Z</published>
+    <updated>2020-12-26T03:19:00.489Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;vs2017-github-添加项目文件时忽略指定文件。&quot;&gt;&lt;a href=&quot;#vs2017-github-添加项目文件时忽略指定文件。&quot; class=&quot;headerlink&quot; title=&quot;vs2017 github
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>WIN10 + vmware + WIN10_guest kdnet调试环境设置</title>
+    <link href="http://blog.dedbg.com/2018/10/11/win10-vmware-win10-windbg-kdnet-debug/"/>
+    <id>http://blog.dedbg.com/2018/10/11/win10-vmware-win10-windbg-kdnet-debug/</id>
+    <published>2018-10-11T13:08:04.000Z</published>
+    <updated>2020-12-26T03:19:00.490Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;WIN10-vmware-WIN10-guest-kdnet调试环境设置&quot;&gt;&lt;a href=&quot;#WIN10-vmware-WIN10-guest-kdnet调试环境设置&quot; class=&quot;headerlink&quot; title=&quot;WIN10 + vmware +
+        
+      
+    
+    </summary>
+    
+    
+      <category term="debug" scheme="http://blog.dedbg.com/tags/debug/"/>
+    
+      <category term="kernel" scheme="http://blog.dedbg.com/tags/kernel/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>asp.net core razor js</title>
+    <link href="http://blog.dedbg.com/2018/10/07/asp-net-razor-js/"/>
+    <id>http://blog.dedbg.com/2018/10/07/asp-net-razor-js/</id>
+    <published>2018-10-07T14:57:05.000Z</published>
+    <updated>2020-12-26T03:19:00.483Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;js嵌套razor语法 例子：&lt;br&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span
+        
+      
+    
+    </summary>
+    
+    
+      <category term="mvc" scheme="http://blog.dedbg.com/tags/mvc/"/>
+    
+      <category term="asp.net core" scheme="http://blog.dedbg.com/tags/asp-net-core/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>win10-subsystem</title>
+    <link href="http://blog.dedbg.com/2018/10/07/win10-subsystem/"/>
+    <id>http://blog.dedbg.com/2018/10/07/win10-subsystem/</id>
+    <published>2018-10-07T14:53:23.000Z</published>
+    <updated>2020-12-26T03:19:00.490Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;ul&gt;
+&lt;li&gt;不要运行大任务！ 不然会后悔的！ win10 subsystem for ubuntu
+        
+      
+    
+    </summary>
+    
+    
+      <category term="linux" scheme="http://blog.dedbg.com/tags/linux/"/>
+    
+      <category term="ubuntu" scheme="http://blog.dedbg.com/tags/ubuntu/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>linux-mysql-install</title>
+    <link href="http://blog.dedbg.com/2018/10/05/linux-mysql-install/"/>
+    <id>http://blog.dedbg.com/2018/10/05/linux-mysql-install/</id>
+    <published>2018-10-05T08:19:15.000Z</published>
+    <updated>2020-12-26T03:19:00.487Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;记录下，不用每次去查&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span
+        
+      
+    
+    </summary>
+    
+    
+      <category term="linux" scheme="http://blog.dedbg.com/tags/linux/"/>
+    
+      <category term="mvc" scheme="http://blog.dedbg.com/tags/mvc/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用Jexus+mono在linux上运行MVC5</title>
+    <link href="http://blog.dedbg.com/2018/10/04/linux-mvc/"/>
+    <id>http://blog.dedbg.com/2018/10/04/linux-mvc/</id>
+    <published>2018-10-04T06:12:55.000Z</published>
+    <updated>2020-12-26T03:19:00.487Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;Jexus官方介绍 &lt;a href=&quot;https://www.jexus.org/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;jexus&lt;/a&gt;&lt;br&gt;为了方便：&lt;br&gt;直接安装jexus独立版 for ubuntu&lt;br&gt;&lt;figure
+        
+      
+    
+    </summary>
+    
+    
+      <category term="linux" scheme="http://blog.dedbg.com/tags/linux/"/>
+    
+      <category term="mvc" scheme="http://blog.dedbg.com/tags/mvc/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ubuntu dotnet-core install</title>
+    <link href="http://blog.dedbg.com/2018/09/25/ubuntu-dotnet/"/>
+    <id>http://blog.dedbg.com/2018/09/25/ubuntu-dotnet/</id>
+    <published>2018-09-25T02:53:54.000Z</published>
+    <updated>2020-12-26T03:19:00.488Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;a href=&quot;https://www.microsoft.com/net/download/linux-package-manager/ubuntu16-04/runtime-current&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="linux" scheme="http://blog.dedbg.com/tags/linux/"/>
+    
+      <category term="ubuntu" scheme="http://blog.dedbg.com/tags/ubuntu/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CentOS LD 环境变量设置</title>
+    <link href="http://blog.dedbg.com/2018/07/30/centos-ld/"/>
+    <id>http://blog.dedbg.com/2018/07/30/centos-ld/</id>
+    <published>2018-07-30T11:02:12.000Z</published>
+    <updated>2020-12-26T03:19:00.484Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;pre&gt;&lt;code&gt;python安装pyaudio，需要portaudio安装成功后，python提示libportaudio.so.2找不到。
+执行export LD_LIBRARY_PATH=xxxx后 source发现还是不行
+export
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Linux" scheme="http://blog.dedbg.com/tags/Linux/"/>
+    
+      <category term="Python" scheme="http://blog.dedbg.com/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>vs写Windows x64汇编程序</title>
+    <link href="http://blog.dedbg.com/2018/03/07/vcasm/"/>
+    <id>http://blog.dedbg.com/2018/03/07/vcasm/</id>
+    <published>2018-03-07T00:25:55.000Z</published>
+    <updated>2020-12-26T03:19:00.488Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span
+        
+      
+    
+    </summary>
+    
+    
+      <category term="debug" scheme="http://blog.dedbg.com/tags/debug/"/>
+    
+      <category term="kernel" scheme="http://blog.dedbg.com/tags/kernel/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>vs中的优化坑</title>
+    <link href="http://blog.dedbg.com/2018/02/24/vsgs/"/>
+    <id>http://blog.dedbg.com/2018/02/24/vsgs/</id>
+    <published>2018-02-24T06:12:04.000Z</published>
+    <updated>2020-12-26T03:19:00.489Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;转载至： &lt;a href=&quot;https://www.cnblogs.com/febwave/p/4602609.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;csdn链接&lt;/a&gt;&lt;br&gt;&lt;figure class=&quot;highlight
+        
+      
+    
+    </summary>
+    
+    
+      <category term="debug" scheme="http://blog.dedbg.com/tags/debug/"/>
+    
+      <category term="vc++" scheme="http://blog.dedbg.com/tags/vc/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>BE驱动抹除进场权限分析</title>
+    <link href="http://blog.dedbg.com/2018/01/10/berw2/"/>
+    <id>http://blog.dedbg.com/2018/01/10/berw2/</id>
+    <published>2018-01-09T23:19:50.000Z</published>
+    <updated>2020-12-26T03:19:00.484Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;上次说道PUBG，抹除权限的线程结束就好了。 &lt;a href=&quot;http://dedbg.com/2017/12/09/killbe/&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="debug" scheme="http://blog.dedbg.com/tags/debug/"/>
+    
+      <category term="kernel" scheme="http://blog.dedbg.com/tags/kernel/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>win10 shadow ssdt 与 NtUserBuildHwndList</title>
+    <link href="http://blog.dedbg.com/2017/12/16/w10sssdt/"/>
+    <id>http://blog.dedbg.com/2017/12/16/w10sssdt/</id>
+    <published>2017-12-15T18:27:02.000Z</published>
+    <updated>2020-12-26T03:19:00.489Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;win10下获取ServiceDescriptorTableShadow这些与win7差不多，略过。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;hook&lt;br&gt; FFFFF960F4B119F0        FF25 B2AB0000        jmp    qword ptr
+        
+      
+    
+    </summary>
+    
+    
+      <category term="debug" scheme="http://blog.dedbg.com/tags/debug/"/>
+    
+      <category term="kernel" scheme="http://blog.dedbg.com/tags/kernel/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>virtualKd+vmware 调试win10 x64</title>
+    <link href="http://blog.dedbg.com/2017/12/15/debugwin10/"/>
+    <id>http://blog.dedbg.com/2017/12/15/debugwin10/</id>
+    <published>2017-12-14T20:10:34.000Z</published>
+    <updated>2020-12-26T03:19:00.485Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;各种问题各种坑。&lt;br&gt;记录下步骤吧，可能还有更简便的方式。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;开机启动win10&lt;/li&gt;
+&lt;li&gt;更改UAC&lt;ul&gt;
+&lt;li&gt;HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion
+        
+      
+    
+    </summary>
+    
+    
+      <category term="debug" scheme="http://blog.dedbg.com/tags/debug/"/>
+    
+      <category term="kernel" scheme="http://blog.dedbg.com/tags/kernel/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>x64加载内核符号解析地址</title>
+    <link href="http://blog.dedbg.com/2017/12/13/enumpdb/"/>
+    <id>http://blog.dedbg.com/2017/12/13/enumpdb/</id>
+    <published>2017-12-13T11:58:05.000Z</published>
+    <updated>2020-12-26T03:19:00.485Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;工程要编译成x64位的。&lt;/p&gt;
+&lt;p&gt;还需要两个DLL  dbghelp.dll   symsrv.dll  和编译生成的EXE放在一起 （在windbg目录有这俩个DLL）&lt;/p&gt;
+&lt;figure class=&quot;highlight c&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td
+        
+      
+    
+    </summary>
+    
+    
+      <category term="debug" scheme="http://blog.dedbg.com/tags/debug/"/>
+    
+      <category term="kernel" scheme="http://blog.dedbg.com/tags/kernel/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>过绝地求生的文件检测</title>
+    <link href="http://blog.dedbg.com/2017/12/13/befile/"/>
+    <id>http://blog.dedbg.com/2017/12/13/befile/</id>
+    <published>2017-12-13T11:36:54.000Z</published>
+    <updated>2020-12-26T03:19:00.483Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\UserAssist&lt;/p&gt;
+&lt;p&gt;前不久刚出的。&lt;br&gt;简单明了的办法就是直接运行后删除自身。&lt;/p&gt;
+&lt;p&gt;另一种：&lt;br&gt;HKEY
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Game" scheme="http://blog.dedbg.com/tags/Game/"/>
+    
+      <category term="debug" scheme="http://blog.dedbg.com/tags/debug/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>内核中的 pid handle eprocess</title>
+    <link href="http://blog.dedbg.com/2017/12/10/pidhandle/"/>
+    <id>http://blog.dedbg.com/2017/12/10/pidhandle/</id>
+    <published>2017-12-10T06:12:04.000Z</published>
+    <updated>2020-12-26T03:19:00.487Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;记录使用。&lt;br&gt;转载至： &lt;a href=&quot;http://blog.csdn.net/whatday/article/details/52493546&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;csdn链接&lt;/a&gt;&lt;br&gt;&lt;figure
+        
+      
+    
+    </summary>
+    
+    
+      <category term="debug" scheme="http://blog.dedbg.com/tags/debug/"/>
+    
+      <category term="kernel" scheme="http://blog.dedbg.com/tags/kernel/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>win7 sp1 让全系统可读ＰＵＢＧ</title>
+    <link href="http://blog.dedbg.com/2017/12/10/killbe/"/>
+    <id>http://blog.dedbg.com/2017/12/10/killbe/</id>
+    <published>2017-12-10T02:53:54.000Z</published>
+    <updated>2020-12-26T03:19:00.486Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;老版本可直接注册个object钩子即可全系统读写。&lt;br&gt;处理代码：&lt;br&gt;&lt;figure class=&quot;highlight c&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span
+        
+      
+    
+    </summary>
+    
+    
+      <category term="debug" scheme="http://blog.dedbg.com/tags/debug/"/>
+    
+      <category term="kernel" scheme="http://blog.dedbg.com/tags/kernel/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>IDA + VMware 调试win7 x64</title>
+    <link href="http://blog.dedbg.com/2017/11/05/20170611-ida-VMware/"/>
+    <id>http://blog.dedbg.com/2017/11/05/20170611-ida-VMware/</id>
+    <published>2017-11-05T03:10:55.000Z</published>
+    <updated>2020-12-26T03:19:00.482Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;项目需要，触及windows PG(PatchGuard) windbg + VMware PG是不初始化及启动。&lt;br&gt;so 选择gdb + vmware.&lt;br&gt;坑及IDAPython&lt;br&gt;[IDA下载][id]&lt;br&gt;[id]:&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="debug" scheme="http://blog.dedbg.com/tags/debug/"/>
+    
+      <category term="kernel" scheme="http://blog.dedbg.com/tags/kernel/"/>
+    
+  </entry>
+  
+</feed>

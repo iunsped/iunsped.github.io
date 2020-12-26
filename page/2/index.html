@@ -1,0 +1,630 @@
+<!DOCTYPE HTML>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="expires" content="0">
+  
+  <title>第 2 页 | 清心小筑</title>
+  <meta name="author" content="Unsped">
+  
+  <meta name="description" content="我的一个博客，资料记录。">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+  <meta property="og:site_name" content="清心小筑">
+
+  
+    <meta property="og:image" content>
+  
+
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-70812759-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?cb5448498d7169c668b07c2b255d62c1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+</head>
+</html>
+ <body>  
+  <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+	  <a class="navbar-brand" href="/">清心小筑</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/archives" title="All the articles.">
+			  <i class=""></i>Archives
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/categories" title="All the categories.">
+			  <i class=""></i>Categories
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags" title="All the tags.">
+			  <i class=""></i>Tags
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/about" title="About me.">
+			  <i class=""></i>About
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/atom.xml" title="Subscribe me.">
+			  <i class=""></i>RSS
+			</a>
+		  </li>
+		  
+		</ul>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
+
+  <div class="container">
+  	<div class="content">
+    	 <div class="page-header logo">
+  <h1>清心小筑<span class="blink-fast">∎</span></h1>
+</div>
+
+<div class="row page">
+
+	
+	<div class="col-md-9">
+	
+
+		<div class="slogan">
+      <i class="fa fa-heart blink-slow"></i>
+      void *p = (void *)rand();
+</div>    
+		<div id="top_search"></div>
+		<div class="mypage">
+		
+		<!-- title and entry -->
+		
+			
+	
+	<!-- display as entry -->
+<div class="row">
+	<div class="col-md-8">
+		<h3 class="title">
+			<a href="/2018/03/07/vcasm/" >vs写Windows x64汇编程序</a>
+		</h3>
+		</div>
+	<div class="col-md-4">
+		<div class="date">post @ 2018-03-07  </div>
+		</div>
+	</div>
+	
+
+
+			<div class="entry">
+  <div class="row">
+	
+	
+		<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">ExitProcess proto</span><br><span class="line">MessageBoxA proto</span><br><span class="line">.data</span><br><span class="line">	lpStr	BYTE &quot;Hello World!&quot;,0</span><br><span class="line">	lpTitle	BYTE &quot;Title&quot;,0</span><br><span class="line">.code</span><br><span class="line">;x64传参为 rcx rdx r8 r9 rsp+28</span><br><span class="line">main proc</span><br><span class="line">mov rcx,0;hwnd</span><br><span class="line">mov rdx,offset lpStr</span><br><span class="line">mov r8,offset lpTitle</span><br><span class="line">mov r9,0</span><br><span class="line">call MessageBoxA</span><br><span class="line">mov rcx,0</span><br><span class="line">call ExitProcess</span><br><span class="line">main endp</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+<p>以上为src.asm</p>
+<p>需要用到ml64 以及kernel32.lib user32.lib<br>编译命令，路径请自行核对：<br>“C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\amd64\ml64.exe” C:\Users\Unsped\Desktop\ASM\src.asm /link /DYNAMICBASE:NO /SUBSYSTEM:WINDOWS /ENTRY:main /DYNAMICBASE “C:\Program Files (x86)\Windows Kits\8.1\Lib\winv6.3\um\x64\kernel32.Lib” “C:\Program Files (x86)\Windows Kits\8.1\Lib\winv6.3\um\x64\User32.Lib”</p>
+<p>/DYNAMICBASE:NO 动态基质<br>/SUBSYSTEM:WINDOWS windows非console程序<br>/ENTRY:main 入口为main 否者会报错：LINK : error LNK2001: 无法解析的外部符号 WinMainCRTStartup 肯定有其他方法解决，就不深究了。<br>/DYNAMICBASE 指定需要的库文件 </p>
+<p>至此，编译完成<br>Microsoft (R) Macro Assembler (x64) Version 14.00.24210.0<br>Copyright (C) Microsoft Corporation.  All rights reserved.</p>
+<p> Assembling: C:\Users\Unsped\Desktop\ASM\src.asm<br>Microsoft (R) Incremental Linker Version 14.00.24215.1<br>Copyright (C) Microsoft Corporation.  All rights reserved.</p>
+<p>/OUT:src.exe<br>src.obj<br>/DYNAMICBASE:NO<br>/SUBSYSTEM:WINDOWS<br>/ENTRY:main<br>/DYNAMICBASE<br>“C:\Program Files (x86)\Windows Kits\8.1\Lib\winv6.3\um\x64\kernel32.Lib”<br>“C:\Program Files (x86)\Windows Kits\8.1\Lib\winv6.3\um\x64\User32.Lib”</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">000000013F451000 &lt;src.EntryPoint&gt;        | 48 C7 C1 00 00 00 00                 | mov rcx,0                                                                                 |</span><br><span class="line">000000013F451007                         | 48 BA 00 30 45 3F 01 00 00 00        | movabs rdx,src.13F453000                                                                  | 13F453000:&quot;Hello World!&quot;</span><br><span class="line">000000013F451011                         | 49 B8 0D 30 45 3F 01 00 00 00        | movabs r8,src.13F45300D                                                                   | 13F45300D:&quot;Title&quot;</span><br><span class="line">000000013F45101B                         | 49 C7 C1 00 00 00 00                 | mov r9,0                                                                                  |</span><br><span class="line">000000013F451022                         | E8 13 00 00 00                       | call &lt;src.MessageBoxA&gt;                                                                    |</span><br><span class="line">000000013F451027                         | 48 C7 C1 00 00 00 00                 | mov rcx,0                                                                                 |</span><br><span class="line">000000013F45102E                         | E8 01 00 00 00                       | call &lt;src.RtlExitUserProcess&gt;                                                             |</span><br><span class="line">000000013F451033                         | CC                                   | int3                                                                                      |</span><br><span class="line">000000013F451034 &lt;src.RtlExitUserProcess | FF 25 C6 0F 00 00                    | jmp qword ptr ds:[&lt;&amp;RtlExitUserProcess&gt;]                                                  |</span><br><span class="line">000000013F45103A &lt;src.MessageBoxA&gt;       | FF 25 D0 0F 00 00                    | jmp qword ptr ds:[&lt;&amp;MessageBoxA&gt;]                                                         |</span><br><span class="line">000000013F451040                         | 00 00                                | add byte ptr ds:[rax],al                                                                  |</span><br><span class="line">000000013F451042                         | 00 00                                | add byte ptr ds:[rax],al                                                                  |</span><br><span class="line">000000013F451044                         | 00 00                                | add byte ptr ds:[rax],al                                                                  |</span><br></pre></td></tr></table></figure>
+<p>给有需要的人。</p>
+
+	
+	</div>
+  <a type="button" href="/2018/03/07/vcasm/#more" class="btn btn-default more">阅读此文</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->
+<div class="row">
+	<div class="col-md-8">
+		<h3 class="title">
+			<a href="/2018/02/24/vsgs/" >vs中的优化坑</a>
+		</h3>
+		</div>
+	<div class="col-md-4">
+		<div class="date">post @ 2018-02-24  </div>
+		</div>
+	</div>
+	
+
+
+			<div class="entry">
+  <div class="row">
+	
+	
+		<p>转载至： <a href="https://www.cnblogs.com/febwave/p/4602609.html" target="_blank" rel="noopener">csdn链接</a><br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> optimize( <span class="meta-string">"gs"</span>, off )</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">calc</span><span class="params">(<span class="keyword">int</span> nMax)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> nTotal = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> index = <span class="number">0</span>;index &lt; nMax;index++)</span><br><span class="line">    &#123;</span><br><span class="line">        nTotal = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> subIndex = index;subIndex &lt; nMax+index;subIndex++ )</span><br><span class="line">        &#123;</span><br><span class="line">            nTotal += subIndex;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> optimize( <span class="meta-string">"gs"</span>,  on )</span></span><br></pre></td></tr></table></figure></p>
+<p>记录。</p>
+
+	
+	</div>
+  <a type="button" href="/2018/02/24/vsgs/#more" class="btn btn-default more">阅读此文</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->
+<div class="row">
+	<div class="col-md-8">
+		<h3 class="title">
+			<a href="/2018/01/10/berw2/" >BE驱动抹除进场权限分析</a>
+		</h3>
+		</div>
+	<div class="col-md-4">
+		<div class="date">post @ 2018-01-10  </div>
+		</div>
+	</div>
+	
+
+
+			<div class="entry">
+  <div class="row">
+	
+	
+		<p>上次说道PUBG，抹除权限的线程结束就好了。 <a href="http://dedbg.com/2017/12/09/killbe/" target="_blank" rel="noopener">上次链接</a><br>抽空仔细分析了一下。<br>代码：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">EnumHandele</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	LIST_ENTRY le;</span><br><span class="line">	PEPROCESS pep = <span class="literal">NULL</span>;</span><br><span class="line">	ULONG csrss = GetProcessId(<span class="string">"csrss.exe"</span>);</span><br><span class="line">	<span class="comment">//ULONG pid = GetProcessId("CE.exe");</span></span><br><span class="line">	ULONG pid = <span class="number">2588</span>;</span><br><span class="line"></span><br><span class="line">	NTSTATUS status = PsLookupProcessByProcessId(csrss, &amp;pep);</span><br><span class="line">	<span class="keyword">if</span> (NT_SUCCESS(status))</span><br><span class="line">	&#123;</span><br><span class="line">		KdPrint((<span class="string">"start\n"</span>));</span><br><span class="line">		HANDLE_TABLE ht = *(PHANDLE_TABLE)*(PULONG64)((PUCHAR)pep + <span class="number">0x200</span>);</span><br><span class="line">		PLIST_ENTRY HandleTableList = ht.HandleTableList;</span><br><span class="line">		PLIST_ENTRY ListEntry = <span class="literal">NULL</span>;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">for</span> (ListEntry = HandleTableList-&gt;Flink; ListEntry != HandleTableList; ListEntry = ListEntry-&gt;Flink)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> (MmIsAddressValid((PUCHAR)ListEntry - <span class="number">0x20</span>) == FALSE)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">continue</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			PHANDLE_TABLE HandleTab = (PHANDLE_TABLE)((PUCHAR)ListEntry - <span class="number">0x20</span>);</span><br><span class="line">			<span class="keyword">char</span> *szName = PsGetProcessImageFileName(HandleTab-&gt;QuotaProcess);</span><br><span class="line">			<span class="comment">//KdPrint(("%p %s cont[%d]\n", HandleTab, szName, HandleTab-&gt;HandleCount));</span></span><br><span class="line">			<span class="keyword">if</span> (HandleTab-&gt;UniqueProcessId == pid &amp;&amp; HandleTab-&gt;HandleCount &lt; <span class="number">0xFF</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				KdPrint((<span class="string">"%p %s cont[%d]\n"</span>, HandleTab, szName, HandleTab-&gt;HandleCount));</span><br><span class="line">				<span class="keyword">for</span> (<span class="keyword">size_t</span> i = <span class="number">0</span>; i &lt; HandleTab-&gt;HandleCount; i++)</span><br><span class="line">				&#123;</span><br><span class="line">					PHANDLE_TABLE_ENTRY HTE = (PHANDLE_TABLE_ENTRY)(HandleTab-&gt;TableCode + i * <span class="number">0x10</span>);</span><br><span class="line">					</span><br><span class="line">					ULONG64 Object = HTE-&gt;Object;</span><br><span class="line">					Object = Object &gt;&gt; <span class="number">3</span>;</span><br><span class="line">					Object = Object &lt;&lt; <span class="number">3</span>;</span><br><span class="line"></span><br><span class="line">					<span class="keyword">char</span> *filename = PsGetProcessImageFileName(Object + <span class="number">0x30</span>);</span><br><span class="line">					Object += <span class="number">0x18</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">					<span class="keyword">if</span> (MmIsAddressValid(Object))</span><br><span class="line">					&#123;</span><br><span class="line">						BYTE TypeIndex = *(BYTE *)(Object);</span><br><span class="line">						<span class="comment">//KdPrint(("object[%p][%x][%x]\n", HTE, HTE-&gt;GrantedAccess, TypeIndex));</span></span><br><span class="line">						<span class="keyword">if</span> (TypeIndex == OB_TYPE_INDEX_JOB)</span><br><span class="line">						&#123;</span><br><span class="line">							KdPrint((<span class="string">"object[%p][%x][%x][%s]\n"</span>, HTE, HTE-&gt;GrantedAccess, TypeIndex, filename));</span><br><span class="line">							</span><br><span class="line">							HTE-&gt;GrantedAccess = <span class="number">0x1f1fff</span>;</span><br><span class="line">						&#125;</span><br><span class="line">					&#125;</span><br><span class="line">					</span><br><span class="line">					</span><br><span class="line">				&#125;</span><br><span class="line"></span><br><span class="line">				</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这样 会得到我们对应的GrantedAccess在内核的地址。<br>object[FFFFF8A007762A30][1f1bc5][7][TslGame.exe]<br>ida+gdb可直接调试BE 对地址下访问断点。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">MEMORY:FFFFF88006212371 mov     [rbx+8], eax				//nop 完事  写入</span><br><span class="line">MEMORY:FFFFF88006212374 setbe   bl</span><br><span class="line">MEMORY:FFFFF88006212377</span><br><span class="line">MEMORY:FFFFF88006212377 loc_FFFFF88006212377:                   ; CODE XREF: MEMORY:loc_FFFFF88006212363j</span><br><span class="line">MEMORY:FFFFF88006212377 xor     al, al</span><br><span class="line">MEMORY:FFFFF88006212379 cmp     r14b, 0E0h ; &apos;</span><br><span class="line">MEMORY:FFFFF8800621237D movsx   edi, r12w</span><br><span class="line">MEMORY:FFFFF88006212381 mov     rbx, [rsp+30h]</span><br><span class="line">MEMORY:FFFFF88006212386 add     rsp, 20h</span><br><span class="line">MEMORY:FFFFF8800621238A movsxd  rdi, r15d</span><br><span class="line">MEMORY:FFFFF8800621238D setns   dil</span><br><span class="line">MEMORY:FFFFF88006212391 pop     rdi</span><br><span class="line">MEMORY:FFFFF88006212392 retn</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">MEMORY:FFFFF880062122D3 jnz     loc_FFFFF88006212302</span><br><span class="line">MEMORY:FFFFF880062122D9 mov     eax, [rbx+8]		//读取</span><br><span class="line">MEMORY:FFFFF880062122DC cmp     r11d, ebx</span><br><span class="line">MEMORY:FFFFF880062122DF test    dl, r10b</span><br><span class="line">MEMORY:FFFFF880062122E2 test    ecx, offset unk_7E5F0EAD</span><br><span class="line">MEMORY:FFFFF880062122E8 test    eax, 43Ah</span><br><span class="line">MEMORY:FFFFF880062122ED jmp     $+5</span><br><span class="line">MEMORY:FFFFF880062122F2 ; ---------------------------------------------------------------------------</span><br><span class="line">MEMORY:FFFFF880062122F2</span><br><span class="line">MEMORY:FFFFF880062122F2 loc_FFFFF880062122F2:                   ; CODE XREF: MEMORY:FFFFF880062122EDj</span><br><span class="line">MEMORY:FFFFF880062122F2 jz      loc_FFFFF88006212377</span><br><span class="line">MEMORY:FFFFF880062122F8 and     eax, offset unk_FFFFFBC5</span><br><span class="line">MEMORY:FFFFF880062122FD jmp     loc_FFFFF88006212371</span><br></pre></td></tr></table></figure></p>
+<p>懒，简单粗暴 nop。</p>
+<p>代码：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">VOID <span class="title">PassBeThread</span><span class="params">(IN PVOID Nothing)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">while</span> (!StopThread)</span><br><span class="line">	&#123;</span><br><span class="line">		MySleep(<span class="number">3000</span>);</span><br><span class="line">		<span class="keyword">if</span> (!isinstall)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">continue</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		ULONG besize = <span class="literal">NULL</span>;</span><br><span class="line">		ULONGLONG bebase = (ULONGLONG)GetKernelModuleHandle(&amp;besize, (PUCHAR)<span class="string">"BEDaisy.sys"</span>);</span><br><span class="line">		<span class="keyword">if</span> (bebase)</span><br><span class="line">		&#123;</span><br><span class="line">			ULONGLONG writebe = bebase + <span class="number">0x1E1371</span>;</span><br><span class="line">			ULONGLONG readbe = bebase + <span class="number">0x1E12D9</span>;</span><br><span class="line">			<span class="keyword">if</span> (MmIsAddressValid((PVOID)readbe) &amp;&amp; MmIsAddressValid((PVOID)writebe))</span><br><span class="line">			&#123;</span><br><span class="line">				BYTE isread = *(BYTE *)readbe;</span><br><span class="line">				BYTE iswrite = *(BYTE *)writebe;</span><br><span class="line">				<span class="keyword">if</span> (isread == <span class="number">0x8B</span>)</span><br><span class="line">				&#123;</span><br><span class="line">					Dedbg((<span class="string">"find be read\n"</span>));</span><br><span class="line">					KIRQL irq = WPOFFx64();</span><br><span class="line">					BYTE data[] = &#123; <span class="number">0x90</span>, <span class="number">0x90</span>, <span class="number">0x90</span> &#125;;</span><br><span class="line">					<span class="built_in">memcpy</span>((PVOID)readbe, data, <span class="number">3</span>);</span><br><span class="line">					WPONx64(irq);</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">if</span> (iswrite == <span class="number">0x89</span>)</span><br><span class="line">				&#123;</span><br><span class="line">					Dedbg((<span class="string">"find be write\n"</span>));</span><br><span class="line">					KIRQL irq = WPOFFx64();</span><br><span class="line">					BYTE data[] = &#123; <span class="number">0x90</span>, <span class="number">0x90</span>, <span class="number">0x90</span> &#125;;</span><br><span class="line">					<span class="built_in">memcpy</span>((PVOID)writebe, data, <span class="number">3</span>);</span><br><span class="line">					WPONx64(irq);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	PsTerminateSystemThread(STATUS_SUCCESS);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>本想去hook读取的地方  想想算了。</p>
+<p>至此即可做任何操作。</p>
+
+	
+	</div>
+  <a type="button" href="/2018/01/10/berw2/#more" class="btn btn-default more">阅读此文</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->
+<div class="row">
+	<div class="col-md-8">
+		<h3 class="title">
+			<a href="/2017/12/16/w10sssdt/" >win10 shadow ssdt 与 NtUserBuildHwndList</a>
+		</h3>
+		</div>
+	<div class="col-md-4">
+		<div class="date">post @ 2017-12-16  </div>
+		</div>
+	</div>
+	
+
+
+			<div class="entry">
+  <div class="row">
+	
+	
+		<p>win10下获取ServiceDescriptorTableShadow这些与win7差不多，略过。</p>
+<ul>
+<li>hook<br> FFFFF960F4B119F0        FF25 B2AB0000        jmp    qword ptr [rip+ABB2]<br> 直接修改rip+ABB2指针的值 及得保存原来的。</li>
+</ul>
+<p>NtUserBuildHwndList 这个函数在win7 下<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">typedef</span> <span class="title">NTSTATUS</span><span class="params">(__fastcall *TYPENtUserBuildHwndList)</span><span class="params">(IN HDESK hdesk,</span></span></span><br><span class="line"><span class="function"><span class="params">	IN HWND hwndNext,</span></span></span><br><span class="line"><span class="function"><span class="params">	IN ULONG fEnumChildren,</span></span></span><br><span class="line"><span class="function"><span class="params">	IN DWORD idThread,</span></span></span><br><span class="line"><span class="function"><span class="params">	IN UINT cHwndMax,</span></span></span><br><span class="line"><span class="function"><span class="params">	OUT HWND *phwndFirst,</span></span></span><br><span class="line"><span class="function"><span class="params">	OUT ULONG* pcHwndNeeded)</span></span>;</span><br></pre></td></tr></table></figure></p>
+<p>最初直接套用，发现蓝屏。  ida查看伪代码发现<br>win7:<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">__int64 __fastcall <span class="title">NtUserBuildHwndList</span><span class="params">(__int64 a1, __int64 a2, PVOID Address, <span class="keyword">unsigned</span> <span class="keyword">int</span> a4, <span class="keyword">unsigned</span> <span class="keyword">int</span> a5, PVOID phwndFirst, <span class="keyword">unsigned</span> __int64 pcHwndNeeded)</span></span></span><br><span class="line"><span class="function">      <span class="title">if</span> <span class="params">( a5 &gt; <span class="number">0x1FFFFFFF</span> )</span></span></span><br><span class="line"><span class="function">        <span class="title">ExRaiseAccessViolation</span><span class="params">()</span></span>;</span><br><span class="line">      ProbeForWrite(phwndFirst, <span class="number">8</span> * v25, <span class="number">4u</span>);</span><br><span class="line">      v26 = (_DWORD *)pcHwndNeeded;</span><br><span class="line">      v27 = (_DWORD *)pcHwndNeeded;</span><br><span class="line">      <span class="keyword">if</span> ( pcHwndNeeded &gt;= (<span class="keyword">unsigned</span> __int64)W32UserProbeAddress )</span><br></pre></td></tr></table></figure></p>
+<p>win10:<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">__int64 __fastcall <span class="title">NtUserBuildHwndList</span><span class="params">(__int64 a1, __int64 a2, <span class="keyword">int</span> a3, <span class="keyword">int</span> a4, PVOID Address, __int64 a6, PVOID Addressa, <span class="keyword">unsigned</span> __int64 a8)</span></span></span><br><span class="line"><span class="function"> <span class="title">ProbeForWrite</span><span class="params">(Addressa, <span class="number">8</span>i64 * (<span class="keyword">unsigned</span> <span class="keyword">int</span>)a6, <span class="number">4u</span>)</span></span>;</span><br><span class="line">      v13 = (_DWORD *)a8;</span><br><span class="line">      v20 = (_DWORD *)a8;</span><br><span class="line">      <span class="keyword">if</span> ( a8 &gt;= *(_QWORD *)W32UserProbeAddress )</span><br><span class="line">        v20 = *(_DWORD **)W32UserProbeAddress;</span><br><span class="line">      *v20 = *v20;</span><br></pre></td></tr></table></figure></p>
+<p>可以知道是在参数a7 之前加入了一个参数 也就是 phwndFirst 之前<br>google：<br><a href="https://codereview.appspot.com/9150045/patch/1/2" target="_blank" rel="noopener">链接</a> 好像被墙。</p>
+<p>so<br>win10:<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">typedef</span> <span class="title">NTSTATUS</span><span class="params">(__fastcall *TYPENtUserBuildHwndListWin10)</span><span class="params">(IN HDESK hdesk,</span></span></span><br><span class="line"><span class="function"><span class="params">	IN HWND hwndNext,</span></span></span><br><span class="line"><span class="function"><span class="params">	IN ULONG fEnumChildren,</span></span></span><br><span class="line"><span class="function"><span class="params">	IN DWORD idThread,</span></span></span><br><span class="line"><span class="function"><span class="params">	PVOID a5,</span></span></span><br><span class="line"><span class="function"><span class="params">	IN UINT cHwndMax,</span></span></span><br><span class="line"><span class="function"><span class="params">	OUT HWND *phwndFirst,</span></span></span><br><span class="line"><span class="function"><span class="params">	OUT ULONG* pcHwndNeeded)</span></span>;</span><br></pre></td></tr></table></figure></p>
+
+	
+	</div>
+  <a type="button" href="/2017/12/16/w10sssdt/#more" class="btn btn-default more">阅读此文</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->
+<div class="row">
+	<div class="col-md-8">
+		<h3 class="title">
+			<a href="/2017/12/15/debugwin10/" >virtualKd+vmware 调试win10 x64</a>
+		</h3>
+		</div>
+	<div class="col-md-4">
+		<div class="date">post @ 2017-12-15  </div>
+		</div>
+	</div>
+	
+
+
+			<div class="entry">
+  <div class="row">
+	
+	
+		<p>各种问题各种坑。<br>记录下步骤吧，可能还有更简便的方式。</p>
+<ul>
+<li>开机启动win10</li>
+<li>更改UAC<ul>
+<li>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System；</li>
+<li>目录下的EnableLUA = 0；</li>
+<li>重启；</li>
+</ul>
+</li>
+<li>复制VirtualKD目录下的target文件夹到虚拟机，运行vminstall.exe 重启；</li>
+<li>F8 禁止驱动签名验证 不知为何 我bcdedit不管用。</li>
+<li>HKEY_LOCAL_MACHINE/SYSTEM/CurrentControlSet/Control/Session Manager/</li>
+<li>新建key,名字为Debug Print Filter ，然后在此key下新建一个DWORD value ，名字为DEFAULT,然后设置值为0x00000008 重启 完事。</li>
+</ul>
+
+	
+	</div>
+  <a type="button" href="/2017/12/15/debugwin10/#more" class="btn btn-default more">阅读此文</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->
+<div class="row">
+	<div class="col-md-8">
+		<h3 class="title">
+			<a href="/2017/12/13/enumpdb/" >x64加载内核符号解析地址</a>
+		</h3>
+		</div>
+	<div class="col-md-4">
+		<div class="date">post @ 2017-12-13  </div>
+		</div>
+	</div>
+	
+
+
+			<div class="entry">
+  <div class="row">
+	
+	
+		<p>工程要编译成x64位的。</p>
+<p>还需要两个DLL  dbghelp.dll   symsrv.dll  和编译生成的EXE放在一起 （在windbg目录有这俩个DLL）</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;Windows.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;psapi.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"dbghelp.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> comment(lib,<span class="meta-string">"dbghelp.lib"</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="function">BOOL CALLBACK <span class="title">EnumSymCallBack</span><span class="params">(PSYMBOL_INFO pSymInfo, ULONG SymbolSize, PVOID UserContext)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (<span class="built_in">strcmp</span>((pSymInfo-&gt;Name), <span class="string">"PspCreateProcessNotifyRoutine"</span>) == <span class="number">0</span> ||</span><br><span class="line">    <span class="built_in">strcmp</span>((pSymInfo-&gt;Name), <span class="string">"PspLoadImageNotifyRoutine"</span>)     == <span class="number">0</span> ||</span><br><span class="line">    <span class="built_in">strcmp</span>((pSymInfo-&gt;Name), <span class="string">"PspCreateThreadNotifyRoutine"</span>)  == <span class="number">0</span>)</span><br><span class="line">  &#123;</span><br><span class="line">      <span class="built_in">printf</span>(<span class="string">"%-30s :%p\n"</span>, pSymInfo-&gt;Name, pSymInfo-&gt;Address);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> TRUE;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="built_in">std</span>::<span class="built_in">string</span> strMod;</span><br><span class="line">  PVOID dwBaseAddr = <span class="number">0</span>;</span><br><span class="line">  PVOID pDrvAddr[<span class="number">128</span>*<span class="number">8</span>];</span><br><span class="line">  DWORD dwcbNeeded = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">if</span> (EnumDeviceDrivers(pDrvAddr,<span class="keyword">sizeof</span>(pDrvAddr),&amp;dwcbNeeded))</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">unsigned</span> <span class="keyword">int</span> i=<span class="number">0</span> ; i&lt;(dwcbNeeded/<span class="number">8</span>) ; i++)</span><br><span class="line">    &#123;</span><br><span class="line">      LPSTR chDrvName[MAX_PATH];</span><br><span class="line">      GetDeviceDriverBaseNameA(pDrvAddr[i],(LPSTR)chDrvName,MAX_PATH);</span><br><span class="line">      dwBaseAddr = pDrvAddr[i];</span><br><span class="line">      strMod = <span class="built_in">std</span>::<span class="built_in">string</span>((<span class="keyword">char</span>*)chDrvName);</span><br><span class="line">      <span class="built_in">printf</span>(<span class="string">"%-20s 0x%p\n"</span>,strMod.c_str(),dwBaseAddr);</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  SymSetOptions(SYMOPT_DEFERRED_LOADS);</span><br><span class="line">  HANDLE hProcess = GetCurrentProcess();</span><br><span class="line">  SymInitialize(hProcess, <span class="number">0</span>, FALSE);</span><br><span class="line">  <span class="built_in">std</span>::<span class="built_in">string</span> strSymbolPath = <span class="string">"srv*C:\\Windows\\symbols*http://msdl.microsoft.com/download/symbols"</span>;</span><br><span class="line">  <span class="built_in">std</span>::<span class="built_in">string</span> strSystemPath = <span class="string">"C:\\Windows\\System32\\"</span> + strMod;</span><br><span class="line">  SymSetSearchPath(hProcess, strSymbolPath.c_str());</span><br><span class="line">  HANDLE hSystemFile = CreateFileA(strSystemPath.c_str(), GENERIC_READ, FILE_SHARE_READ | FILE_SHARE_WRITE,</span><br><span class="line">    <span class="literal">NULL</span>, OPEN_EXISTING, <span class="number">0</span>, <span class="literal">NULL</span>);</span><br><span class="line">  DWORD dwFileSize = GetFileSize(hSystemFile, <span class="literal">NULL</span>);</span><br><span class="line">  DWORD64  dwBase = SymLoadModule64(hProcess, <span class="literal">NULL</span>, strSystemPath.c_str(), <span class="literal">NULL</span>, (DWORD64)dwBaseAddr, dwFileSize);</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">"正在枚举符号...\n"</span>);</span><br><span class="line">  SymEnumSymbols(hProcess, dwBase, <span class="number">0</span>, EnumSymCallBack, <span class="number">0</span>);</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">"枚举符号结束...\n"</span>);</span><br><span class="line">  SymUnloadModule64(hProcess, dwBase);</span><br><span class="line">  SymCleanup(hProcess);</span><br><span class="line">  system(<span class="string">"pause"</span>);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+	
+	</div>
+  <a type="button" href="/2017/12/13/enumpdb/#more" class="btn btn-default more">阅读此文</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->
+<div class="row">
+	<div class="col-md-8">
+		<h3 class="title">
+			<a href="/2017/12/13/befile/" >过绝地求生的文件检测</a>
+		</h3>
+		</div>
+	<div class="col-md-4">
+		<div class="date">post @ 2017-12-13  </div>
+		</div>
+	</div>
+	
+
+
+			<div class="entry">
+  <div class="row">
+	
+	
+		<p>HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\UserAssist</p>
+<p>前不久刚出的。<br>简单明了的办法就是直接运行后删除自身。</p>
+<p>另一种：<br>HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\UserAssist<br>运行过的程序记录。<br>就像pchunter你放那没事，运行有卸载驱动关闭pchunter，上游戏BE还是会弹提示。<br>so  想到应该是获取刚运行后的文件。<br>以下是代码  很丑<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">CHAR <span class="title">GetROT13Key</span><span class="params">(CHAR uKey)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	CHAR pRet = uKey;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (uKey &gt;= <span class="string">'a'</span> &amp;&amp; uKey &lt;= <span class="string">'m'</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		pRet += <span class="number">13</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span> (uKey &gt;= <span class="string">'n'</span> &amp;&amp; uKey &lt;= <span class="string">'z'</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		pRet -= <span class="number">13</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span> (uKey &gt;= <span class="string">'A'</span> &amp;&amp; uKey &lt;= <span class="string">'M'</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		pRet += <span class="number">13</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span> (uKey &gt;= <span class="string">'N'</span> &amp;&amp; uKey &lt;= <span class="string">'Z'</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		pRet -= <span class="number">13</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> pRet;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">VOID <span class="title">DecryptionKey</span><span class="params">(CHAR* pKeyData, INT inLen)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> ((<span class="literal">NULL</span> == pKeyData) || (<span class="number">0</span> == inLen))</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (INT i = <span class="number">0</span>; i &lt; inLen; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		pKeyData[i] = GetROT13Key(pKeyData[i]);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">cRunLog::test</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	CRegKey Key;</span><br><span class="line">	CString KeyPath = _T(<span class="string">"Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\UserAssist"</span>);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (Key.Open(HKEY_CURRENT_USER, KeyPath) == ERROR_SUCCESS)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">char</span> subKeyName[MAX_PATH];</span><br><span class="line">		DWORD dwLength = MAX_PATH;</span><br><span class="line">		<span class="keyword">for</span> (DWORD i = <span class="number">0</span>; Key.EnumKey(i, subKeyName, &amp;dwLength) != ERROR_NO_MORE_ITEMS; dwLength = MAX_PATH, i++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">printf</span>(subKeyName);</span><br><span class="line">			CRegKey Key1;</span><br><span class="line">			<span class="keyword">char</span> subKeyName1[MAX_PATH];</span><br><span class="line">			<span class="keyword">if</span> (Key1.Open(HKEY_CURRENT_USER, KeyPath + <span class="string">"\\"</span> + subKeyName) == ERROR_SUCCESS)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">for</span> (DWORD ii = <span class="number">0</span>; Key1.EnumKey(ii, subKeyName1, &amp;dwLength) != ERROR_NO_MORE_ITEMS; dwLength = MAX_PATH, ii++)</span><br><span class="line">				&#123;</span><br><span class="line">					<span class="built_in">printf</span>(subKeyName1);</span><br><span class="line">					CRegKey Key2;</span><br><span class="line">					<span class="keyword">char</span> subKeyName2[MAX_PATH];</span><br><span class="line">					<span class="keyword">if</span> (Key2.Open(HKEY_CURRENT_USER, KeyPath + <span class="string">"\\"</span> + subKeyName + <span class="string">"\\"</span> + subKeyName1) == ERROR_SUCCESS)</span><br><span class="line">					&#123;</span><br><span class="line">						dwLength = MAXBYTE;</span><br><span class="line">						DWORD dwType = <span class="literal">NULL</span>;</span><br><span class="line">						DWORD iii = <span class="number">0</span>;</span><br><span class="line">						DWORD rt = <span class="literal">NULL</span>;</span><br><span class="line">						<span class="keyword">while</span> (!RegEnumValue(Key2.m_hKey, iii++, subKeyName2, &amp;dwLength, <span class="literal">NULL</span>, &amp;dwType, <span class="literal">NULL</span>, <span class="literal">NULL</span>))</span><br><span class="line">						&#123;</span><br><span class="line">							DecryptionKey(subKeyName2, dwLength);</span><br><span class="line">							OutputDebugString(subKeyName2);</span><br><span class="line">							OutputDebugString(<span class="string">"\n"</span>);</span><br><span class="line">							dwLength = MAXBYTE;</span><br><span class="line">						&#125;</span><br><span class="line">						Key2.Close();</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">				Key1.Close();</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		Key.Close();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>内核版：<br><a href="https://bbs.pediy.com/thread-223246.htm" target="_blank" rel="noopener">看雪链接</a></p>
+<p>撂。。。</p>
+
+	
+	</div>
+  <a type="button" href="/2017/12/13/befile/#more" class="btn btn-default more">阅读此文</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->
+<div class="row">
+	<div class="col-md-8">
+		<h3 class="title">
+			<a href="/2017/12/10/pidhandle/" >内核中的 pid handle eprocess</a>
+		</h3>
+		</div>
+	<div class="col-md-4">
+		<div class="date">post @ 2017-12-10  </div>
+		</div>
+	</div>
+	
+
+
+			<div class="entry">
+  <div class="row">
+	
+	
+		<p>记录使用。<br>转载至： <a href="http://blog.csdn.net/whatday/article/details/52493546" target="_blank" rel="noopener">csdn链接</a><br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>、pid-&gt;handle</span><br><span class="line">OBJECT_ATTRIBUTES ObjectAttributes;</span><br><span class="line">CLIENT_ID clientid;</span><br><span class="line">InitializeObjectAttributes(&amp;ObjectAttributes, <span class="number">0</span> ,OBJ_CASE_INSENSITIVE | OBJ_KERNEL_HANDLE, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">clientid.UniqueProcess = (HANDLE)pid;</span><br><span class="line">clientid.UniqueThread=<span class="number">0</span>;</span><br><span class="line">ZwOpenProcess(&amp;handle, PROCESS_ALL_ACCESS, &amp;ObjectAttributes, &amp;clientid); </span><br><span class="line">handle即为所求。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="number">2</span>、handle-&gt;pid</span><br><span class="line">PROCESS_BASIC_INFORMATION pbi;</span><br><span class="line">ns = ZwQueryInformationProcess(ProcessHandle, ProcessBasicInformation, (PVOID)&amp;pbi, <span class="keyword">sizeof</span>(ProcessBasicInformation), <span class="literal">NULL</span>);</span><br><span class="line">pid = pbi.UniqueProcessId; </span><br><span class="line">pid即为所求。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="number">3</span>、pid-&gt;eprocess</span><br><span class="line">PEPROCESS pEProc;</span><br><span class="line">PsLookupProcessByProcessId((HANDLE)pid, &amp;pEProc);</span><br><span class="line">ObDereferenceObject(pEProc); </span><br><span class="line">pEProc即为所求eprocess的指针。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="number">4</span>、handle-&gt;eprocess</span><br><span class="line">st = ObReferenceObjectByHandle (ProcessHandle,</span><br><span class="line">                                    PROCESS_TERMINATE,</span><br><span class="line">                                    PsProcessType,</span><br><span class="line">                                    KeGetPreviousModeByThread(&amp;Self-&gt;Tcb),</span><br><span class="line">                                    &amp;Process,</span><br><span class="line">                                    <span class="literal">NULL</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="number">5</span>、eprocess-&gt;pid</span><br><span class="line">_EPROCESS.UniqueProcessId即为所求，虽然声明类型为HANDLE，但实际上是pid。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="number">6</span>、eprocess-&gt;handle</span><br><span class="line">Status = ObOpenObjectByPointer(</span><br><span class="line">                    Process,</span><br><span class="line">                    Attributes,</span><br><span class="line">                    &amp;AccessState,</span><br><span class="line">                    <span class="number">0</span>,</span><br><span class="line">                    PsProcessType,</span><br><span class="line">                    PreviousMode,</span><br><span class="line">                    &amp;Handle</span><br><span class="line">                    );</span><br></pre></td></tr></table></figure></p>
+<p>下面是自己想到的：<br>HANDLE -&gt; EPROCESS -&gt; PID<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">PEPROCESS pEProcess;</span><br><span class="line">	ULONG PID = <span class="literal">NULL</span>;</span><br><span class="line">	NTSTATUS Status = ObReferenceObjectByHandle(ProcessHandle, FILE_READ_DATA, <span class="literal">NULL</span>, KernelMode, &amp;pEProcess, <span class="literal">NULL</span>);</span><br><span class="line">	<span class="keyword">if</span> (NT_SUCCESS(Status))</span><br><span class="line">	&#123;</span><br><span class="line">		PID = PsGetProcessId(pEProcess);</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure></p>
+
+	
+	</div>
+  <a type="button" href="/2017/12/10/pidhandle/#more" class="btn btn-default more">阅读此文</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->
+<div class="row">
+	<div class="col-md-8">
+		<h3 class="title">
+			<a href="/2017/12/10/killbe/" >win7 sp1 让全系统可读ＰＵＢＧ</a>
+		</h3>
+		</div>
+	<div class="col-md-4">
+		<div class="date">post @ 2017-12-10  </div>
+		</div>
+	</div>
+	
+
+
+			<div class="entry">
+  <div class="row">
+	
+	
+		<p>老版本可直接注册个object钩子即可全系统读写。<br>处理代码：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">OB_PREOP_CALLBACK_STATUS <span class="title">preCall</span><span class="params">(PVOID RegistrationContext, POB_PRE_OPERATION_INFORMATION pOperationInformation)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (pOperationInformation-&gt;ObjectType != *PsProcessType)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">return</span> OB_PREOP_SUCCESS;</span><br><span class="line">	&#125;</span><br><span class="line">	UNREFERENCED_PARAMETER(RegistrationContext);</span><br><span class="line">	<span class="keyword">if</span> (!_stricmp(<span class="string">"TslGame.exe"</span>, PsGetProcessImageFileName((PEPROCESS)pOperationInformation-&gt;Object)))</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (pOperationInformation-&gt;Operation == OB_OPERATION_HANDLE_CREATE)</span><br><span class="line">		&#123;</span><br><span class="line">			pOperationInformation-&gt;Parameters-&gt;CreateHandleInformation.DesiredAccess = <span class="number">0x1F1FFF</span>;<span class="comment">//0x1F1FFF;</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> OB_PREOP_SUCCESS;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>前几日更新后发现无法读写获取等等。</p>
+<p>Process Hacker查看句柄发现：<br>0x1f1fff (Query information, Set information, Set quotas, Set session ID, Create threads, Create processes, VM operation, Duplicate handles, Suspend/resume, Terminate, Synchronize, Delete, Read control, Write DAC, Write owner)</p>
+<p>少了（VM read, VM write）</p>
+<p>简单处理方法：<br>2292        0xFFFFFA8005C8FB60        0x0000000000000000        9        0xFFFFF8800604E660        BEDaisy.sys        2326        等待<br>内核结束掉BE驱动的线程即可。<br>底层基础不好，未做仔细分析。</p>
+<p>代码如下：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">VOID <span class="title">PassBeThread</span><span class="params">(IN PVOID Nothing)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	DEF_StartAddress_Offset = GetStartAddressOffset();</span><br><span class="line">	<span class="keyword">if</span> (!DEF_StartAddress_Offset)</span><br><span class="line">	&#123;</span><br><span class="line">		DbgPrint(<span class="string">"Error offset\n"</span>);</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">while</span> (TRUE)</span><br><span class="line">	&#123;</span><br><span class="line">		bebase = GetKernelBase(&amp;besize, <span class="string">"BEDaisy.sys"</span>);</span><br><span class="line">		<span class="keyword">if</span> (bebase)</span><br><span class="line">		&#123;</span><br><span class="line">			KdPrint((<span class="string">"be mod[%p %.8x]\n"</span>, bebase, besize));</span><br><span class="line">			PETHREAD ethread = <span class="literal">NULL</span>;</span><br><span class="line">			<span class="keyword">for</span> (ULONG i = <span class="number">4</span>; i &lt; <span class="number">0x40000</span>; i = i + <span class="number">4</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">if</span> (!NT_SUCCESS(PsLookupThreadByThreadId((HANDLE)i, &amp;ethread)))</span><br><span class="line">				&#123;</span><br><span class="line">					<span class="keyword">continue</span>;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">if</span> (ethread != <span class="literal">NULL</span>)</span><br><span class="line">				&#123;</span><br><span class="line">					PEPROCESS eprocess = PsGetThreadProcess(ethread);</span><br><span class="line">					<span class="keyword">char</span> *szName = PsGetProcessImageFileName(eprocess);</span><br><span class="line">					PVOID startadr = GetThreadStartAdr(ethread);</span><br><span class="line">					<span class="keyword">if</span> (!_stricmp(szName, <span class="string">"System"</span>) &amp;&amp; IsBeMod(startadr))</span><br><span class="line">					&#123;</span><br><span class="line">						KdPrint((<span class="string">"%s %p %p\n"</span>, szName, ethread, startadr));</span><br><span class="line">						KillThread(ethread);</span><br><span class="line">						ObDereferenceObject(ethread);</span><br><span class="line">						<span class="keyword">break</span>;</span><br><span class="line">					&#125;</span><br><span class="line">					ObDereferenceObject(ethread);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		MySleep(<span class="number">1000</span>);</span><br><span class="line">		<span class="keyword">if</span> (iskillthread == <span class="number">1</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			KdPrint((<span class="string">"kill my thread!\n"</span>));</span><br><span class="line">			iskillthread = <span class="number">2</span>;</span><br><span class="line">			PsTerminateSystemThread(STATUS_SUCCESS);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>至此即可做任何操作。</p>
+
+	
+	</div>
+  <a type="button" href="/2017/12/10/killbe/#more" class="btn btn-default more">阅读此文</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->
+<div class="row">
+	<div class="col-md-8">
+		<h3 class="title">
+			<a href="/2017/11/05/20170611-ida-VMware/" >IDA + VMware 调试win7 x64</a>
+		</h3>
+		</div>
+	<div class="col-md-4">
+		<div class="date">post @ 2017-11-05  </div>
+		</div>
+	</div>
+	
+
+
+			<div class="entry">
+  <div class="row">
+	
+	
+		<p>项目需要，触及windows PG(PatchGuard) windbg + VMware PG是不初始化及启动。<br>so 选择gdb + vmware.<br>坑及IDAPython<br>[IDA下载][id]<br>[id]:<a href="https://down.52pojie.cn/Tools/Disassemblers/IDA_Pro_v6.8_and_Hex-Rays_Decompiler_(ARM,x64,x86)_Green.rar" target="_blank" rel="noopener">https://down.52pojie.cn/Tools/Disassemblers/IDA_Pro_v6.8_and_Hex-Rays_Decompiler_(ARM,x64,x86)_Green.rar</a><br>解压，目录下&lt;Registry.reg&gt;里面的路径替换成你的，导入注册表。<br>安装目录下的python或自行下载27版本安装。<br>ida打开后可看见：<br><img src="/image/2017-11-06/1.png" alt="ida"></p>
+<p>转载自看雪：<a href="https://bbs.pediy.com/thread-221884.htm" target="_blank" rel="noopener">链接</a></p>
+<p>下面备份一个吧！</p>
+<p>debugStub.listen.guest64 = “TRUE”<br>debugStub.hideBreakpoints= “TRUE”<br>debugStub.listen.guest64.remote = “TRUE”</p>
+<p>8864 or 8832</p>
+<p>测试文章，完结撒花。</p>
+
+	
+	</div>
+  <a type="button" href="/2017/11/05/20170611-ida-VMware/#more" class="btn btn-default more">阅读此文</a>
+</div>
+
+		
+
+		</div>
+
+		<!-- pagination -->
+		<div>
+  		<center>
+		<div class="pagination">
+
+   
+    
+     <a href="/" type="button" class="btn btn-default"><i class="fa fa-arrow-circle-o-left"></i> 上一页</a>
+      
+
+        <a href="/" type="button" class="btn btn-default"><i class="fa fa-home"></i>Home</a>
+ 
+          <a type="button" class="btn btn-default disabled">下一页<i class="fa fa-arrow-circle-o-right"></i></a>
+        
+
+  
+</div>
+
+  		</center>
+		</div>
+
+		
+		
+	</div> <!-- col-md-9 -->
+
+	
+		<div class="col-md-3">
+	<div id="sidebar">
+	
+			
+  <div id="site_search">
+   <div class="form-group">
+    <input type="text" id="local-search-input" name="q" results="0" placeholder="搜索" class="st-search-input st-default-search-input form-control"/>
+   </div>  
+  <div id="local-search-result"></div>
+  </div>
+
+
+		
+			
+		
+			
+	<div class="widget">
+		<h4>标签云</h4>
+		<ul class="tag_box inline list-unstyled">		
+		
+			<li><a href="/tags/ubuntu/">ubuntu<span>3</span></a></li>
+		
+			<li><a href="/tags/vc/">vc++<span>1</span></a></li>
+		
+			<li><a href="/tags/mvc/">mvc<span>3</span></a></li>
+		
+			<li><a href="/tags/Game/">Game<span>1</span></a></li>
+		
+			<li><a href="/tags/debug/">debug<span>11</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>1</span></a></li>
+		
+			<li><a href="/tags/linux/">linux<span>5</span></a></li>
+		
+			<li><a href="/tags/php/">php<span>1</span></a></li>
+		
+			<li><a href="/tags/laravel/">laravel<span>1</span></a></li>
+		
+			<li><a href="/tags/asp-net-core/">asp.net core<span>1</span></a></li>
+		
+			<li><a href="/tags/Python/">Python<span>1</span></a></li>
+		
+			<li><a href="/tags/kernel/">kernel<span>9</span></a></li>
+		
+		 
+		</ul>
+	</div>
+
+
+		
+			
+<div class="widget">
+  <h4>最新文章</h4>
+  <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2020/12/26/win10-wsl/" ><i class="fa fa-file-o"></i>win10-subsystem 修改安装目录</a>
+      </li>
+    
+      <li>
+        <a href="/2019/06/09/laravel-config/" ><i class="fa fa-file-o"></i>laravel 环境配置</a>
+      </li>
+    
+      <li>
+        <a href="/2018/12/24/vs-github/" ><i class="fa fa-file-o"></i>vs.github</a>
+      </li>
+    
+      <li>
+        <a href="/2018/10/11/win10-vmware-win10-windbg-kdnet-debug/" ><i class="fa fa-file-o"></i>WIN10 + vmware + WIN10_gues...</a>
+      </li>
+    
+      <li>
+        <a href="/2018/10/07/asp-net-razor-js/" ><i class="fa fa-file-o"></i>asp.net core razor js</a>
+      </li>
+    
+  </ul>
+</div>
+
+		
+			
+<div class="widget">
+	<h4>链接</h4>
+	<ul class="blogroll list-unstyled">
+	
+		<li><i class="fa fa-github"></i><a href="https://kidoplay.com/" title="Kido's Blog." target="_blank"]);">Kido&#39;s Blog.</a></li>
+	
+	</ul>
+</div>
+
+
+		
+	</div> <!-- sidebar -->
+</div> <!-- col-md-3 -->
+
+	
+	
+</div> <!-- row-fluid -->
+	</div>
+  </div>
+  <div class="container-narrow">
+  <footer> <p>
+&#169; 2001 Unsped
+</a>
+</p>
+
+ </footer>
+</div> <!-- container-narrow -->
+  
+
+
+  
+<a id="gotop" href="#">   
+  <span>⬆︎TOP</span>
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script> 
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+</body>
+   </html>

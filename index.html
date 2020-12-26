@@ -1,0 +1,616 @@
+<!DOCTYPE HTML>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="expires" content="0">
+  
+  <title>清心小筑</title>
+  <meta name="author" content="Unsped">
+  
+  <meta name="description" content="我的一个博客，资料记录。">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+  <meta property="og:site_name" content="清心小筑">
+
+  
+    <meta property="og:image" content>
+  
+
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-70812759-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?cb5448498d7169c668b07c2b255d62c1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+</head>
+</html>
+ <body>  
+  <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+	  <a class="navbar-brand" href="/">清心小筑</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/archives" title="All the articles.">
+			  <i class=""></i>Archives
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/categories" title="All the categories.">
+			  <i class=""></i>Categories
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags" title="All the tags.">
+			  <i class=""></i>Tags
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/about" title="About me.">
+			  <i class=""></i>About
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/atom.xml" title="Subscribe me.">
+			  <i class=""></i>RSS
+			</a>
+		  </li>
+		  
+		</ul>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
+
+  <div class="container">
+  	<div class="content">
+    	 <div class="page-header logo">
+  <h1>清心小筑<span class="blink-fast">∎</span></h1>
+</div>
+
+<div class="row page">
+
+	
+	<div class="col-md-9">
+	
+
+		<div class="slogan">
+      <i class="fa fa-heart blink-slow"></i>
+      void *p = (void *)rand();
+</div>    
+		<div id="top_search"></div>
+		<div class="mypage">
+		
+		<!-- title and entry -->
+		
+			
+	
+	<!-- display as entry -->
+<div class="row">
+	<div class="col-md-8">
+		<h3 class="title">
+			<a href="/2020/12/26/win10-wsl/" >win10-subsystem 修改安装目录</a>
+		</h3>
+		</div>
+	<div class="col-md-4">
+		<div class="date">post @ 2020-12-26  </div>
+		</div>
+	</div>
+	
+
+
+			<div class="entry">
+  <div class="row">
+	
+	
+		<ul>
+<li>不要运行大任务！ 不然会后悔的！ win10 subsystem for ubuntu 16.04!<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">wsl -l --all  -v   //首先查看所有分发版本</span><br><span class="line">* Ubuntu-20.04 Running 1</span><br><span class="line"></span><br><span class="line">wsl --export Ubuntu-20.04 d:\ubuntu20.04.tar   //导出分发版为tar文件到d盘</span><br><span class="line">wsl --unregister Ubuntu-20.04  //注销当前分发版</span><br><span class="line">wsl --import Ubuntu-20.04 d:\ubuntu d:\ubuntu20.04.tar --version 1 //重新导入并安装分发版在d:\ubuntu</span><br><span class="line">ubuntu2004 config --default-user Username //设置默认登陆用户为安装时用户名</span><br><span class="line">del d:\ubuntu20.04.tar    //删除tar文件(可选)</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+	
+	</div>
+  <a type="button" href="/2020/12/26/win10-wsl/#more" class="btn btn-default more">阅读此文</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->
+<div class="row">
+	<div class="col-md-8">
+		<h3 class="title">
+			<a href="/2019/06/09/laravel-config/" >laravel 环境配置</a>
+		</h3>
+		</div>
+	<div class="col-md-4">
+		<div class="date">post @ 2019-06-09  </div>
+		</div>
+	</div>
+	
+
+
+			<div class="entry">
+  <div class="row">
+	
+	
+		<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">composer create-project laravel/laravel blog <span class="number">5</span>.<span class="number">5</span>.* --prefer-dist		//<span class="number">5</span>.<span class="number">5</span>.*是LTS版本</span><br><span class="line">composer require laravelcollective/html=<span class="number">5</span>.<span class="number">5</span>.*  //Form支持     </span><br><span class="line">composer require barryvdh/laravel-ide-helper //ida 支持</span><br><span class="line">php artisan vendor:publish --provider="Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider" --tag=config     //导出配置</span><br><span class="line">php artisan ide-helper:generate</span><br></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Collective\Html\HtmlServiceProvider::class,</span><br><span class="line">Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,</span><br></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'From'</span> =&gt; Illuminate\Support\Facades\Facade::class,</span><br></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">config/ide-helper.php:</span><br><span class="line"><span class="string">'include_fluent'</span> =&gt; <span class="keyword">true</span>,</span><br></pre></td></tr></table></figure>
+
+	
+	</div>
+  <a type="button" href="/2019/06/09/laravel-config/#more" class="btn btn-default more">阅读此文</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->
+<div class="row">
+	<div class="col-md-8">
+		<h3 class="title">
+			<a href="/2018/12/24/vs-github/" >vs.github</a>
+		</h3>
+		</div>
+	<div class="col-md-4">
+		<div class="date">post @ 2018-12-24  </div>
+		</div>
+	</div>
+	
+
+
+			<div class="entry">
+  <div class="row">
+	
+	
+		<h1 id="vs2017-github-添加项目文件时忽略指定文件。"><a href="#vs2017-github-添加项目文件时忽略指定文件。" class="headerlink" title="vs2017 github 添加项目文件时忽略指定文件。"></a>vs2017 github 添加项目文件时忽略指定文件。</h1><p>各种坑。<br>vs2017集成了与github<br>点几下就可以把项目丢到github 比较方便<br>添加项目文件时想排除一些关键的 比如数据库连接阿 什么的 可是他不管你。<br>笨办法；文件移动目录外<br>.gitignore文件添加你需要忽略的文件就好了</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">*.a       # 忽略所有 .a 结尾的文件</span><br><span class="line">!lib.a    # 但 lib.a 除外</span><br><span class="line">/TODO     # 仅仅忽略项目根目录下的 TODO 文件，不包括 subdir/TODO</span><br><span class="line">build/    # 忽略 build/ 目录下的所有文件</span><br><span class="line">doc/*.txt # 会忽略 doc/notes.txt 但不包括 doc/server/arch.txt</span><br><span class="line">test.txt</span><br></pre></td></tr></table></figure>
+	
+	</div>
+  <a type="button" href="/2018/12/24/vs-github/#more" class="btn btn-default more">阅读此文</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->
+<div class="row">
+	<div class="col-md-8">
+		<h3 class="title">
+			<a href="/2018/10/11/win10-vmware-win10-windbg-kdnet-debug/" >WIN10 + vmware + WIN10_guest kdnet调试环境设置</a>
+		</h3>
+		</div>
+	<div class="col-md-4">
+		<div class="date">post @ 2018-10-11  </div>
+		</div>
+	</div>
+	
+
+
+			<div class="entry">
+  <div class="row">
+	
+	
+		<h1 id="WIN10-vmware-WIN10-guest-kdnet调试环境设置"><a href="#WIN10-vmware-WIN10-guest-kdnet调试环境设置" class="headerlink" title="WIN10 + vmware + WIN10_guest kdnet调试环境设置"></a>WIN10 + vmware + WIN10_guest kdnet调试环境设置</h1><p><a href="https://docs.microsoft.com/zh-cn/windows-hardware/drivers/debugger/setting-up-a-network-debugging-connection-automatically" target="_blank" rel="noopener">官方介绍：</a></p>
+<p>拷贝后运行得知：<br><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Failed to parse the busparams:PCI  <span class="number">11</span> <span class="number">0</span> <span class="number">0</span></span><br><span class="line">Network debugging is <span class="keyword">not</span> supported on any of the NICs <span class="keyword">in</span> this machine.</span><br><span class="line">KDNET supports NICs from Intel, Broadcom, Realtek, Atheros, Emulex, Mellanox</span><br><span class="line">and Cisco.</span><br></pre></td></tr></table></figure></p>
+<p>so：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">bcdedit /debug on</span><br><span class="line">bcdedit /dbgsettings net hostip:192.168.0.xxx port:65535</span><br></pre></td></tr></table></figure></p>
+<p>Microsoft Store -&gt; Search -&gt; Windbg PreView</p>
+<p>Attach to kernel</p>
+<p>net</p>
+<p>port 65535 key = xxxxxx(上面cmd会给你的)</p>
+<p>Target = guest ip </p>
+<p>reboot guest</p>
+
+	
+	</div>
+  <a type="button" href="/2018/10/11/win10-vmware-win10-windbg-kdnet-debug/#more" class="btn btn-default more">阅读此文</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->
+<div class="row">
+	<div class="col-md-8">
+		<h3 class="title">
+			<a href="/2018/10/07/asp-net-razor-js/" >asp.net core razor js</a>
+		</h3>
+		</div>
+	<div class="col-md-4">
+		<div class="date">post @ 2018-10-07  </div>
+		</div>
+	</div>
+	
+
+
+			<div class="entry">
+  <div class="row">
+	
+	
+		<p>js嵌套razor语法 例子：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    $(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        @&#123;</span><br><span class="line">            <span class="keyword">var</span> islogin = <span class="keyword">this</span>.Html.ViewContext.HttpContext.Session.GetString(<span class="string">"Manage"</span>);</span><br><span class="line">            <span class="keyword">if</span> (islogin == <span class="literal">null</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                &lt;text&gt;  </span><br><span class="line">                    &#123;</span><br><span class="line">                        view.gohome();</span><br><span class="line">                    &#125;</span><br><span class="line">                &lt;<span class="regexp">/text&gt;</span></span><br><span class="line"><span class="regexp">            &#125;</span></span><br><span class="line"><span class="regexp">        &#125;</span></span><br><span class="line"><span class="regexp">    &#125;);</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;/</span>script&gt;</span><br></pre></td></tr></table></figure></p>
+<p>页面生成如下：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    $(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">                    &#123;</span><br><span class="line">                        view.gohome();</span><br><span class="line">                    &#125;</span><br><span class="line">                    &#125;);</span><br><span class="line"></span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>session使用：<br>nuget: Microsoft.AspNetCore.Session<br><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.HttpContext.Session</span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> Set&lt;T&gt;(ISession session, <span class="keyword">string</span> key, T <span class="keyword">value</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            session.SetString(key, JsonConvert.SerializeObject(<span class="keyword">value</span>));</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">static</span> T Get&lt;T&gt;(ISession session, <span class="keyword">string</span> key)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">var</span> <span class="keyword">value</span> = session.GetString(key);</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">value</span> == <span class="literal">null</span> ? <span class="keyword">default</span>(T) :</span><br><span class="line">                JsonConvert.DeserializeObject&lt;T&gt;(<span class="keyword">value</span>);</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure></p>
+<p>建议不要使用asp.net core mvc了<br><img src="/image/2017-11-06/1538924966.PNG" alt="测试"><br>只是个登陆页面  什么操作都没有 so 还是少用吧</p>
+
+	
+	</div>
+  <a type="button" href="/2018/10/07/asp-net-razor-js/#more" class="btn btn-default more">阅读此文</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->
+<div class="row">
+	<div class="col-md-8">
+		<h3 class="title">
+			<a href="/2018/10/07/win10-subsystem/" >win10-subsystem</a>
+		</h3>
+		</div>
+	<div class="col-md-4">
+		<div class="date">post @ 2018-10-07  </div>
+		</div>
+	</div>
+	
+
+
+			<div class="entry">
+  <div class="row">
+	
+	
+		<ul>
+<li>不要运行大任务！ 不然会后悔的！ win10 subsystem for ubuntu 16.04!</li>
+</ul>
+
+	
+	</div>
+  <a type="button" href="/2018/10/07/win10-subsystem/#more" class="btn btn-default more">阅读此文</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->
+<div class="row">
+	<div class="col-md-8">
+		<h3 class="title">
+			<a href="/2018/10/05/linux-mysql-install/" >linux-mysql-install</a>
+		</h3>
+		</div>
+	<div class="col-md-4">
+		<div class="date">post @ 2018-10-05  </div>
+		</div>
+	</div>
+	
+
+
+			<div class="entry">
+  <div class="row">
+	
+	
+		<p>记录下，不用每次去查<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install mysql-server</span><br><span class="line">sudo netstat -tap | grep mysql </span><br><span class="line">mysql_secure_installation   //~mysql/bin/mysql_secure_installation</span><br><span class="line">sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf //bind-address</span><br><span class="line"></span><br><span class="line">mysql-u root -p</span><br><span class="line">CREATE USER &apos;username&apos;@&apos;%&apos; IDENTIFIED BY &apos;passwd&apos;;//创建一个用户 可以远程访问</span><br><span class="line">CREATE DATABASE mydb; //创建mydb这个库</span><br><span class="line">GRANT SELECT, INSERT ON mydb.* TO &apos;username&apos;@&apos;%&apos;;</span><br><span class="line">flush privileges;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">sudo service mysql restart</span><br></pre></td></tr></table></figure></p>
+
+	
+	</div>
+  <a type="button" href="/2018/10/05/linux-mysql-install/#more" class="btn btn-default more">阅读此文</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->
+<div class="row">
+	<div class="col-md-8">
+		<h3 class="title">
+			<a href="/2018/10/04/linux-mvc/" >使用Jexus+mono在linux上运行MVC5</a>
+		</h3>
+		</div>
+	<div class="col-md-4">
+		<div class="date">post @ 2018-10-04  </div>
+		</div>
+	</div>
+	
+
+
+			<div class="entry">
+  <div class="row">
+	
+	
+		<p>Jexus官方介绍 <a href="https://www.jexus.org/" target="_blank" rel="noopener">jexus</a><br>为了方便：<br>直接安装jexus独立版 for ubuntu<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo curl https://jexus.org/release/x64/install.sh|sudo sh</span><br></pre></td></tr></table></figure></p>
+<p>配置就不需要了调试环境：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/jexus/siteconf</span><br><span class="line">vim demo</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">port = 8080 //端口</span><br><span class="line">hosts = * //没有域名 可看官方介绍</span><br><span class="line">root = /home/ubuntu/8080root //www目录</span><br><span class="line">indexs = index.html</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd ..</span><br><span class="line">sudo ./jws restart</span><br></pre></td></tr></table></figure>
+<p>上面就配置好了<br>打开vs (ver = 2017)<br>发布<br>上传至www目录下<br>访问即可</p>
+
+	
+	</div>
+  <a type="button" href="/2018/10/04/linux-mvc/#more" class="btn btn-default more">阅读此文</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->
+<div class="row">
+	<div class="col-md-8">
+		<h3 class="title">
+			<a href="/2018/09/25/ubuntu-dotnet/" >ubuntu dotnet-core install</a>
+		</h3>
+		</div>
+	<div class="col-md-4">
+		<div class="date">post @ 2018-09-25  </div>
+		</div>
+	</div>
+	
+
+
+			<div class="entry">
+  <div class="row">
+	
+	
+		<p><a href="https://www.microsoft.com/net/download/linux-package-manager/ubuntu16-04/runtime-current" target="_blank" rel="noopener">微软官方安装方法</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">wget -q https://packages.microsoft.com/config/ubuntu/16.04/packages-microsoft-prod.deb</span><br><span class="line">sudo dpkg -i packages-microsoft-prod.deb</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install aspnetcore-runtime-2.1</span><br><span class="line">后发现：</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">root@DESKTOP-ME54PJV:/home/xxoo# sudo apt-get install aspnetcore-runtime-2.1</span><br><span class="line">Reading package lists... Done</span><br><span class="line">Building dependency tree</span><br><span class="line">Reading state information... Done</span><br><span class="line">Some packages could not be installed. This may mean that you have</span><br><span class="line">requested an impossible situation or if you are using the unstable</span><br><span class="line">distribution that some required packages have not yet been created</span><br><span class="line">or been moved out of Incoming.</span><br><span class="line">The following information may help to resolve the situation:</span><br><span class="line"></span><br><span class="line">The following packages have unmet dependencies:</span><br><span class="line"> dotnet-sdk-2.1 : Depends: dotnet-runtime-2.1 (&gt;= 2.1.4) but it is not going to be installed</span><br><span class="line">                  Depends: aspnetcore-runtime-2.1 (&gt;= 2.1.4) but it is not going to be installed</span><br><span class="line">E: Unable to correct problems, you have held broken packages.</span><br></pre></td></tr></table></figure>
+<ul>
+<li>解决方法：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">apt install aptitude</span><br><span class="line">aptitude install</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">root@DESKTOP-ME54PJV:/home/xxoo# sudo apt-get install aspnetcore-runtime-2.1</span><br><span class="line">The following NEW packages will be installed:</span><br><span class="line">  aspnetcore-runtime-2.1&#123;a&#125; dotnet-host&#123;a&#125; dotnet-hostfxr-2.1&#123;a&#125; dotnet-runtime-2.1&#123;a&#125; dotnet-runtime-deps-2.1&#123;ab&#125; dotnet-sdk-2.1</span><br><span class="line">0 packages upgraded, 6 newly installed, 0 to remove and 0 not upgraded.</span><br><span class="line">Need to get 132 MB of archives. After unpacking 380 MB will be used.</span><br><span class="line">The following packages have unmet dependencies:</span><br><span class="line"> dotnet-runtime-deps-2.1 : Depends: libicu55 which is a virtual package and is not provided by any available package</span><br><span class="line"></span><br><span class="line">The following actions will resolve these dependencies:</span><br><span class="line"></span><br><span class="line">     Keep the following packages at their current version:</span><br><span class="line">1)     aspnetcore-runtime-2.1 [Not Installed]</span><br><span class="line">2)     dotnet-runtime-2.1 [Not Installed]</span><br><span class="line">3)     dotnet-runtime-deps-2.1 [Not Installed]</span><br><span class="line">4)     dotnet-sdk-2.1 [Not Installed]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Accept this solution? [Y/n/q/?] Y</span><br><span class="line">No packages will be installed, upgraded, or removed.</span><br><span class="line">0 packages upgraded, 0 newly installed, 0 to remove and 0 not upgraded.</span><br><span class="line">Need to get 0 B of archives. After unpacking 0 B will be used.</span><br><span class="line"></span><br><span class="line">libicu55 没有源可以提供</span><br><span class="line">/etc/apt/sources.list中加入</span><br><span class="line">deb http://security.ubuntu.com/ubuntu xenial-security main</span><br><span class="line"></span><br><span class="line">apt update</span><br><span class="line">apt install aspnetcore-runtime-2.1</span><br><span class="line">即可</span><br><span class="line">root@DESKTOP-ME54PJV:/home/xxoo# dotnet --version</span><br><span class="line">2.1.402</span><br></pre></td></tr></table></figure>
+	
+	</div>
+  <a type="button" href="/2018/09/25/ubuntu-dotnet/#more" class="btn btn-default more">阅读此文</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->
+<div class="row">
+	<div class="col-md-8">
+		<h3 class="title">
+			<a href="/2018/07/30/centos-ld/" >CentOS LD 环境变量设置</a>
+		</h3>
+		</div>
+	<div class="col-md-4">
+		<div class="date">post @ 2018-07-30  </div>
+		</div>
+	</div>
+	
+
+
+			<div class="entry">
+  <div class="row">
+	
+	
+		<pre><code>python安装pyaudio，需要portaudio安装成功后，python提示libportaudio.so.2找不到。
+执行export LD_LIBRARY_PATH=xxxx后 source发现还是不行
+export -p后发现有这个目录。/usr/local/bin
+
+python还是不行。 未知了。
+最后解决方法如下：
+cd /etc/ld.so.conf.d
+touch portaudio.conf
+vi portaudio.conf
+/usr/local/bin
+
+ldconfig
+成功！
+</code></pre>
+	
+	</div>
+  <a type="button" href="/2018/07/30/centos-ld/#more" class="btn btn-default more">阅读此文</a>
+</div>
+
+		
+
+		</div>
+
+		<!-- pagination -->
+		<div>
+  		<center>
+		<div class="pagination">
+
+   
+    
+           <a type="button" class="btn btn-default disabled"><i class="fa fa-arrow-circle-o-left"></i>上一页</a>
+        
+
+        <a href="/" type="button" class="btn btn-default"><i class="fa fa-home"></i>Home</a>
+ 
+       <a href="/page/2/" type="button" class="btn btn-default ">下一页<i class="fa fa-arrow-circle-o-right"></i></a>     
+        
+
+  
+</div>
+
+  		</center>
+		</div>
+
+		
+		
+	</div> <!-- col-md-9 -->
+
+	
+		<div class="col-md-3">
+	<div id="sidebar">
+	
+			
+  <div id="site_search">
+   <div class="form-group">
+    <input type="text" id="local-search-input" name="q" results="0" placeholder="搜索" class="st-search-input st-default-search-input form-control"/>
+   </div>  
+  <div id="local-search-result"></div>
+  </div>
+
+
+		
+			
+		
+			
+	<div class="widget">
+		<h4>标签云</h4>
+		<ul class="tag_box inline list-unstyled">		
+		
+			<li><a href="/tags/ubuntu/">ubuntu<span>3</span></a></li>
+		
+			<li><a href="/tags/laravel/">laravel<span>1</span></a></li>
+		
+			<li><a href="/tags/kernel/">kernel<span>9</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>1</span></a></li>
+		
+			<li><a href="/tags/Python/">Python<span>1</span></a></li>
+		
+			<li><a href="/tags/debug/">debug<span>11</span></a></li>
+		
+			<li><a href="/tags/Game/">Game<span>1</span></a></li>
+		
+			<li><a href="/tags/asp-net-core/">asp.net core<span>1</span></a></li>
+		
+			<li><a href="/tags/mvc/">mvc<span>3</span></a></li>
+		
+			<li><a href="/tags/linux/">linux<span>5</span></a></li>
+		
+			<li><a href="/tags/php/">php<span>1</span></a></li>
+		
+			<li><a href="/tags/vc/">vc++<span>1</span></a></li>
+		
+		 
+		</ul>
+	</div>
+
+
+		
+			
+<div class="widget">
+  <h4>最新文章</h4>
+  <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2020/12/26/win10-wsl/" ><i class="fa fa-file-o"></i>win10-subsystem 修改安装目录</a>
+      </li>
+    
+      <li>
+        <a href="/2019/06/09/laravel-config/" ><i class="fa fa-file-o"></i>laravel 环境配置</a>
+      </li>
+    
+      <li>
+        <a href="/2018/12/24/vs-github/" ><i class="fa fa-file-o"></i>vs.github</a>
+      </li>
+    
+      <li>
+        <a href="/2018/10/11/win10-vmware-win10-windbg-kdnet-debug/" ><i class="fa fa-file-o"></i>WIN10 + vmware + WIN10_gues...</a>
+      </li>
+    
+      <li>
+        <a href="/2018/10/07/asp-net-razor-js/" ><i class="fa fa-file-o"></i>asp.net core razor js</a>
+      </li>
+    
+  </ul>
+</div>
+
+		
+			
+<div class="widget">
+	<h4>链接</h4>
+	<ul class="blogroll list-unstyled">
+	
+		<li><i class="fa fa-github"></i><a href="https://kidoplay.com/" title="Kido's Blog." target="_blank"]);">Kido&#39;s Blog.</a></li>
+	
+	</ul>
+</div>
+
+
+		
+	</div> <!-- sidebar -->
+</div> <!-- col-md-3 -->
+
+	
+	
+</div> <!-- row-fluid -->
+	</div>
+  </div>
+  <div class="container-narrow">
+  <footer> <p>
+&#169; 2001 Unsped
+</a>
+</p>
+
+ </footer>
+</div> <!-- container-narrow -->
+  
+
+
+  
+<a id="gotop" href="#">   
+  <span>⬆︎TOP</span>
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script> 
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+</body>
+   </html>

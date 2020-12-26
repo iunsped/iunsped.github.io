@@ -1,0 +1,261 @@
+<!DOCTYPE HTML>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="expires" content="0">
+  
+  <title>vs写Windows x64汇编程序 | 清心小筑</title>
+  <meta name="author" content="Unsped">
+  
+  <meta name="description" content="我的一个博客，资料记录。">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="vs写Windows x64汇编程序">
+  <meta property="og:site_name" content="清心小筑">
+
+  
+    <meta property="og:image" content>
+  
+
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-70812759-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?cb5448498d7169c668b07c2b255d62c1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+</head>
+</html>
+ <body>  
+  <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+	  <a class="navbar-brand" href="/">清心小筑</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/archives" title="All the articles.">
+			  <i class=""></i>Archives
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/categories" title="All the categories.">
+			  <i class=""></i>Categories
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags" title="All the tags.">
+			  <i class=""></i>Tags
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/about" title="About me.">
+			  <i class=""></i>About
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/atom.xml" title="Subscribe me.">
+			  <i class=""></i>RSS
+			</a>
+		  </li>
+		  
+		</ul>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
+
+  <div class="container">
+  	<div class="content">
+    	 
+
+
+	
+		<div class="page-header">
+			<h1> vs写Windows x64汇编程序</h1>
+		</div>
+	
+
+
+
+<div class="row post">
+	<!-- cols -->
+	
+	<div id="top_meta"></div>
+	<div class="col-md-9">
+	
+
+	<!-- content -->
+	<div class="mypage">		
+	  		
+
+	  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">ExitProcess proto</span><br><span class="line">MessageBoxA proto</span><br><span class="line">.data</span><br><span class="line">	lpStr	BYTE &quot;Hello World!&quot;,0</span><br><span class="line">	lpTitle	BYTE &quot;Title&quot;,0</span><br><span class="line">.code</span><br><span class="line">;x64传参为 rcx rdx r8 r9 rsp+28</span><br><span class="line">main proc</span><br><span class="line">mov rcx,0;hwnd</span><br><span class="line">mov rdx,offset lpStr</span><br><span class="line">mov r8,offset lpTitle</span><br><span class="line">mov r9,0</span><br><span class="line">call MessageBoxA</span><br><span class="line">mov rcx,0</span><br><span class="line">call ExitProcess</span><br><span class="line">main endp</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+<p>以上为src.asm</p>
+<p>需要用到ml64 以及kernel32.lib user32.lib<br>编译命令，路径请自行核对：<br>“C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\amd64\ml64.exe” C:\Users\Unsped\Desktop\ASM\src.asm /link /DYNAMICBASE:NO /SUBSYSTEM:WINDOWS /ENTRY:main /DYNAMICBASE “C:\Program Files (x86)\Windows Kits\8.1\Lib\winv6.3\um\x64\kernel32.Lib” “C:\Program Files (x86)\Windows Kits\8.1\Lib\winv6.3\um\x64\User32.Lib”</p>
+<p>/DYNAMICBASE:NO 动态基质<br>/SUBSYSTEM:WINDOWS windows非console程序<br>/ENTRY:main 入口为main 否者会报错：LINK : error LNK2001: 无法解析的外部符号 WinMainCRTStartup 肯定有其他方法解决，就不深究了。<br>/DYNAMICBASE 指定需要的库文件 </p>
+<p>至此，编译完成<br>Microsoft (R) Macro Assembler (x64) Version 14.00.24210.0<br>Copyright (C) Microsoft Corporation.  All rights reserved.</p>
+<p> Assembling: C:\Users\Unsped\Desktop\ASM\src.asm<br>Microsoft (R) Incremental Linker Version 14.00.24215.1<br>Copyright (C) Microsoft Corporation.  All rights reserved.</p>
+<p>/OUT:src.exe<br>src.obj<br>/DYNAMICBASE:NO<br>/SUBSYSTEM:WINDOWS<br>/ENTRY:main<br>/DYNAMICBASE<br>“C:\Program Files (x86)\Windows Kits\8.1\Lib\winv6.3\um\x64\kernel32.Lib”<br>“C:\Program Files (x86)\Windows Kits\8.1\Lib\winv6.3\um\x64\User32.Lib”</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">000000013F451000 &lt;src.EntryPoint&gt;        | 48 C7 C1 00 00 00 00                 | mov rcx,0                                                                                 |</span><br><span class="line">000000013F451007                         | 48 BA 00 30 45 3F 01 00 00 00        | movabs rdx,src.13F453000                                                                  | 13F453000:&quot;Hello World!&quot;</span><br><span class="line">000000013F451011                         | 49 B8 0D 30 45 3F 01 00 00 00        | movabs r8,src.13F45300D                                                                   | 13F45300D:&quot;Title&quot;</span><br><span class="line">000000013F45101B                         | 49 C7 C1 00 00 00 00                 | mov r9,0                                                                                  |</span><br><span class="line">000000013F451022                         | E8 13 00 00 00                       | call &lt;src.MessageBoxA&gt;                                                                    |</span><br><span class="line">000000013F451027                         | 48 C7 C1 00 00 00 00                 | mov rcx,0                                                                                 |</span><br><span class="line">000000013F45102E                         | E8 01 00 00 00                       | call &lt;src.RtlExitUserProcess&gt;                                                             |</span><br><span class="line">000000013F451033                         | CC                                   | int3                                                                                      |</span><br><span class="line">000000013F451034 &lt;src.RtlExitUserProcess | FF 25 C6 0F 00 00                    | jmp qword ptr ds:[&lt;&amp;RtlExitUserProcess&gt;]                                                  |</span><br><span class="line">000000013F45103A &lt;src.MessageBoxA&gt;       | FF 25 D0 0F 00 00                    | jmp qword ptr ds:[&lt;&amp;MessageBoxA&gt;]                                                         |</span><br><span class="line">000000013F451040                         | 00 00                                | add byte ptr ds:[rax],al                                                                  |</span><br><span class="line">000000013F451042                         | 00 00                                | add byte ptr ds:[rax],al                                                                  |</span><br><span class="line">000000013F451044                         | 00 00                                | add byte ptr ds:[rax],al                                                                  |</span><br></pre></td></tr></table></figure>
+<p>给有需要的人。</p>
+	  
+	</div>
+
+	<div>
+  	<center>
+	<div class="pagination">
+
+    
+    
+    <a href="/2018/07/30/centos-ld/" type="button" class="btn btn-default"><i
+                class="fa fa-arrow-circle-o-left"></i> 上一页</a>
+    
+
+    <a href="/" type="button" class="btn btn-default"><i class="fa fa-home"></i>Home</a>
+    
+    <a href="/2018/02/24/vsgs/" type="button" class="btn btn-default ">下一页<i
+                class="fa fa-arrow-circle-o-right"></i></a>
+    
+
+    
+</div>
+
+    </center>
+	</div>
+	
+	<!-- comment -->
+	
+<section id="comment">
+    <h2 class="title">留言</h2>
+
+    
+</section>
+
+
+	</div> <!-- col-md-9/col-md-12 -->
+		
+	
+	<div id="side_meta">
+		<div class="col-md-3" id="post_meta"> 
+
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2018-03-07 
+	</div>
+	
+
+	<!-- categories -->
+    
+
+	<!-- tags -->
+	
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
+    <ul id="tags" class="tag_box list-unstyled collapse in">	  
+	    
+  <li><a href="/tags/debug/">debug<span>11</span></a></li> <li><a href="/tags/kernel/">kernel<span>9</span></a></li>
+    </ul>
+	</div>
+		
+
+	<!-- toc -->
+	<div class="meta-widget">
+	
+	</div>
+	
+    <hr>
+	
+</div><!-- col-md-3 -->
+
+	</div>
+		
+
+</div><!-- row -->
+
+
+
+	</div>
+  </div>
+  <div class="container-narrow">
+  <footer> <p>
+&#169; 2001 Unsped
+</a>
+</p>
+
+ </footer>
+</div> <!-- container-narrow -->
+  
+
+
+  
+<a id="gotop" href="#">   
+  <span>⬆︎TOP</span>
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script> 
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+</body>
+   </html>
