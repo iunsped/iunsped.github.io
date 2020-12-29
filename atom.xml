@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.dedbg.com/"/>
-  <updated>2020-12-26T03:34:57.800Z</updated>
+  <updated>2020-12-29T02:29:45.490Z</updated>
   <id>http://blog.dedbg.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>lumen jwt init</title>
+    <link href="http://blog.dedbg.com/2020/12/29/lumen-jwt-init/"/>
+    <id>http://blog.dedbg.com/2020/12/29/lumen-jwt-init/</id>
+    <published>2020-12-29T02:16:46.000Z</published>
+    <updated>2020-12-29T02:29:45.490Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+           &lt;figure class=&quot;highlight php&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span
+        
+      
+    
+    </summary>
+    
+    
+      <category term="php" scheme="http://blog.dedbg.com/tags/php/"/>
+    
+      <category term="laravel" scheme="http://blog.dedbg.com/tags/laravel/"/>
+    
+  </entry>
   
   <entry>
     <title>win10-subsystem 修改安装目录</title>
@@ -111,9 +137,9 @@
     </summary>
     
     
-      <category term="debug" scheme="http://blog.dedbg.com/tags/debug/"/>
-    
       <category term="kernel" scheme="http://blog.dedbg.com/tags/kernel/"/>
+    
+      <category term="debug" scheme="http://blog.dedbg.com/tags/debug/"/>
     
   </entry>
   
@@ -190,9 +216,9 @@
     </summary>
     
     
-      <category term="linux" scheme="http://blog.dedbg.com/tags/linux/"/>
-    
       <category term="mvc" scheme="http://blog.dedbg.com/tags/mvc/"/>
+    
+      <category term="linux" scheme="http://blog.dedbg.com/tags/linux/"/>
     
   </entry>
   
@@ -216,9 +242,9 @@
     </summary>
     
     
-      <category term="linux" scheme="http://blog.dedbg.com/tags/linux/"/>
-    
       <category term="mvc" scheme="http://blog.dedbg.com/tags/mvc/"/>
+    
+      <category term="linux" scheme="http://blog.dedbg.com/tags/linux/"/>
     
   </entry>
   
@@ -296,9 +322,9 @@ export
     </summary>
     
     
-      <category term="debug" scheme="http://blog.dedbg.com/tags/debug/"/>
-    
       <category term="kernel" scheme="http://blog.dedbg.com/tags/kernel/"/>
+    
+      <category term="debug" scheme="http://blog.dedbg.com/tags/debug/"/>
     
   </entry>
   
@@ -348,9 +374,9 @@ export
     </summary>
     
     
-      <category term="debug" scheme="http://blog.dedbg.com/tags/debug/"/>
-    
       <category term="kernel" scheme="http://blog.dedbg.com/tags/kernel/"/>
+    
+      <category term="debug" scheme="http://blog.dedbg.com/tags/debug/"/>
     
   </entry>
   
@@ -376,9 +402,9 @@ export
     </summary>
     
     
-      <category term="debug" scheme="http://blog.dedbg.com/tags/debug/"/>
-    
       <category term="kernel" scheme="http://blog.dedbg.com/tags/kernel/"/>
+    
+      <category term="debug" scheme="http://blog.dedbg.com/tags/debug/"/>
     
   </entry>
   
@@ -406,9 +432,9 @@ export
     </summary>
     
     
-      <category term="debug" scheme="http://blog.dedbg.com/tags/debug/"/>
-    
       <category term="kernel" scheme="http://blog.dedbg.com/tags/kernel/"/>
+    
+      <category term="debug" scheme="http://blog.dedbg.com/tags/debug/"/>
     
   </entry>
   
@@ -434,9 +460,9 @@ export
     </summary>
     
     
-      <category term="debug" scheme="http://blog.dedbg.com/tags/debug/"/>
-    
       <category term="kernel" scheme="http://blog.dedbg.com/tags/kernel/"/>
+    
+      <category term="debug" scheme="http://blog.dedbg.com/tags/debug/"/>
     
   </entry>
   
@@ -462,9 +488,9 @@ export
     </summary>
     
     
-      <category term="Game" scheme="http://blog.dedbg.com/tags/Game/"/>
-    
       <category term="debug" scheme="http://blog.dedbg.com/tags/debug/"/>
+    
+      <category term="Game" scheme="http://blog.dedbg.com/tags/Game/"/>
     
   </entry>
   
@@ -488,9 +514,9 @@ export
     </summary>
     
     
-      <category term="debug" scheme="http://blog.dedbg.com/tags/debug/"/>
-    
       <category term="kernel" scheme="http://blog.dedbg.com/tags/kernel/"/>
+    
+      <category term="debug" scheme="http://blog.dedbg.com/tags/debug/"/>
     
   </entry>
   
@@ -514,35 +540,9 @@ export
     </summary>
     
     
-      <category term="debug" scheme="http://blog.dedbg.com/tags/debug/"/>
-    
       <category term="kernel" scheme="http://blog.dedbg.com/tags/kernel/"/>
     
-  </entry>
-  
-  <entry>
-    <title>IDA + VMware 调试win7 x64</title>
-    <link href="http://blog.dedbg.com/2017/11/05/20170611-ida-VMware/"/>
-    <id>http://blog.dedbg.com/2017/11/05/20170611-ida-VMware/</id>
-    <published>2017-11-05T03:10:55.000Z</published>
-    <updated>2020-12-26T03:19:00.482Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;项目需要，触及windows PG(PatchGuard) windbg + VMware PG是不初始化及启动。&lt;br&gt;so 选择gdb + vmware.&lt;br&gt;坑及IDAPython&lt;br&gt;[IDA下载][id]&lt;br&gt;[id]:&lt;a
-        
-      
-    
-    </summary>
-    
-    
       <category term="debug" scheme="http://blog.dedbg.com/tags/debug/"/>
-    
-      <category term="kernel" scheme="http://blog.dedbg.com/tags/kernel/"/>
     
   </entry>
   

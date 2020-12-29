@@ -138,6 +138,50 @@ var _hmt = _hmt || [];
 <div class="row">
 	<div class="col-md-8">
 		<h3 class="title">
+			<a href="/2020/12/29/lumen-jwt-init/" >lumen jwt init</a>
+		</h3>
+		</div>
+	<div class="col-md-4">
+		<div class="date">post @ 2020-12-29  </div>
+		</div>
+	</div>
+	
+
+
+			<div class="entry">
+  <div class="row">
+	
+	
+		 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">composer <span class="keyword">require</span> tymon/jwt-auth ^<span class="number">1.0</span><span class="number">.0</span>-rc<span class="number">.2</span></span><br></pre></td></tr></table></figure>
+<ol>
+<li>复制vender/laravel/lumen-framework/config/auth.php到/config/auth.php</li>
+<li>app.php 启动服务注册之类的</li>
+</ol>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">$app-&gt;withFacades();</span><br><span class="line">$app-&gt;withEloquent();</span><br><span class="line">$app-&gt;routeMiddleware([</span><br><span class="line">    <span class="string">'auth'</span> =&gt; App\Http\Middleware\Authenticate::class,</span><br><span class="line">]);</span><br><span class="line"></span><br><span class="line">$app-&gt;register(App\Providers\AppServiceProvider::class);</span><br><span class="line">$app-&gt;register(App\Providers\AuthServiceProvider::class);</span><br><span class="line">$app-&gt;register(Tymon\JWTAuth\Providers\LumenServiceProvider::class);</span><br></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> [</span><br><span class="line">    <span class="string">'defaults'</span> =&gt; [</span><br><span class="line">        <span class="string">'guard'</span> =&gt; <span class="string">'api'</span>,</span><br><span class="line">    ],</span><br><span class="line"></span><br><span class="line">    <span class="string">'guards'</span> =&gt; [</span><br><span class="line">        <span class="string">'api'</span> =&gt; [<span class="string">'driver'</span> =&gt; <span class="string">'jwt'</span>,<span class="string">'provider'</span> =&gt; <span class="string">'admins'</span>],</span><br><span class="line">    ],</span><br><span class="line"></span><br><span class="line">    <span class="string">'providers'</span> =&gt; [</span><br><span class="line">        <span class="string">'users'</span> =&gt; [</span><br><span class="line">            <span class="string">'driver'</span> =&gt; <span class="string">'eloquent'</span>,</span><br><span class="line">            <span class="string">'model'</span> =&gt; \App\Models\User::class,</span><br><span class="line">        ],</span><br><span class="line">        <span class="string">'admins'</span> =&gt; [</span><br><span class="line">            <span class="string">'driver'</span> =&gt; <span class="string">'eloquent'</span>,</span><br><span class="line">            <span class="string">'model'</span> =&gt; \App\Models\Admin::class,</span><br><span class="line">        ],</span><br><span class="line">    ],</span><br><span class="line"></span><br><span class="line">    <span class="string">'passwords'</span> =&gt; [</span><br><span class="line">        <span class="comment">//</span></span><br><span class="line">    ],</span><br><span class="line"></span><br><span class="line">];</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li><p>修改 ‘app/Providers’ 文件夹下的 ‘AuthServiceProvider.php’ 如下所示：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">boot</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="comment">// 当使用auth中间件的api门卫的时候验证请求体</span></span><br><span class="line">        <span class="keyword">$this</span>-&gt;app[<span class="string">'auth'</span>]-&gt;viaRequest(<span class="string">'api'</span>, <span class="function"><span class="keyword">function</span> <span class="params">($request)</span></span></span><br><span class="line"><span class="function">        </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> app(<span class="string">'auth'</span>)-&gt;setRequest($request)-&gt;user();</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>模型下增加</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">use</span> <span class="title">Tymon</span>\<span class="title">JWTAuth</span>\<span class="title">Contracts</span>\<span class="title">JWTSubject</span>;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">User</span> <span class="keyword">extends</span> <span class="title">Model</span> <span class="keyword">implements</span> <span class="title">AuthenticatableContract</span>, <span class="title">AuthorizableContract</span>, <span class="title">JWTSubject</span></span></span><br><span class="line">public function getJWTIdentifier()</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">$this</span>-&gt;getKey();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * JWT</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@author</span> AdamTyn</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">getJWTCustomClaims</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> [];</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>$token = Auth::login($user) //这样就获取到token了<br>header ：\<br>Authorization : “Bearer “ + token</p>
+</li>
+</ol>
+
+	
+	</div>
+  <a type="button" href="/2020/12/29/lumen-jwt-init/#more" class="btn btn-default more">阅读此文</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->
+<div class="row">
+	<div class="col-md-8">
+		<h3 class="title">
 			<a href="/2020/12/26/win10-wsl/" >win10-subsystem 修改安装目录</a>
 		</h3>
 		</div>
@@ -411,46 +455,6 @@ var _hmt = _hmt || [];
 </div>
 
 		
-			
-	
-	<!-- display as entry -->
-<div class="row">
-	<div class="col-md-8">
-		<h3 class="title">
-			<a href="/2018/07/30/centos-ld/" >CentOS LD 环境变量设置</a>
-		</h3>
-		</div>
-	<div class="col-md-4">
-		<div class="date">post @ 2018-07-30  </div>
-		</div>
-	</div>
-	
-
-
-			<div class="entry">
-  <div class="row">
-	
-	
-		<pre><code>python安装pyaudio，需要portaudio安装成功后，python提示libportaudio.so.2找不到。
-执行export LD_LIBRARY_PATH=xxxx后 source发现还是不行
-export -p后发现有这个目录。/usr/local/bin
-
-python还是不行。 未知了。
-最后解决方法如下：
-cd /etc/ld.so.conf.d
-touch portaudio.conf
-vi portaudio.conf
-/usr/local/bin
-
-ldconfig
-成功！
-</code></pre>
-	
-	</div>
-  <a type="button" href="/2018/07/30/centos-ld/#more" class="btn btn-default more">阅读此文</a>
-</div>
-
-		
 
 		</div>
 
@@ -500,29 +504,29 @@ ldconfig
 		<h4>标签云</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/tags/linux/">linux<span>5</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>1</span></a></li>
-		
 			<li><a href="/tags/ubuntu/">ubuntu<span>3</span></a></li>
+		
+			<li><a href="/tags/asp-net-core/">asp.net core<span>1</span></a></li>
 		
 			<li><a href="/tags/debug/">debug<span>11</span></a></li>
 		
-			<li><a href="/tags/laravel/">laravel<span>1</span></a></li>
+			<li><a href="/tags/linux/">linux<span>5</span></a></li>
 		
-			<li><a href="/tags/kernel/">kernel<span>9</span></a></li>
-		
-			<li><a href="/tags/vc/">vc++<span>1</span></a></li>
+			<li><a href="/tags/mvc/">mvc<span>3</span></a></li>
 		
 			<li><a href="/tags/Game/">Game<span>1</span></a></li>
 		
 			<li><a href="/tags/Python/">Python<span>1</span></a></li>
 		
-			<li><a href="/tags/asp-net-core/">asp.net core<span>1</span></a></li>
+			<li><a href="/tags/vc/">vc++<span>1</span></a></li>
 		
-			<li><a href="/tags/mvc/">mvc<span>3</span></a></li>
+			<li><a href="/tags/php/">php<span>2</span></a></li>
 		
-			<li><a href="/tags/php/">php<span>1</span></a></li>
+			<li><a href="/tags/Linux/">Linux<span>1</span></a></li>
+		
+			<li><a href="/tags/kernel/">kernel<span>9</span></a></li>
+		
+			<li><a href="/tags/laravel/">laravel<span>2</span></a></li>
 		
 		 
 		</ul>
@@ -534,6 +538,10 @@ ldconfig
 <div class="widget">
   <h4>最新文章</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2020/12/29/lumen-jwt-init/" ><i class="fa fa-file-o"></i>lumen jwt init</a>
+      </li>
     
       <li>
         <a href="/2020/12/26/win10-wsl/" ><i class="fa fa-file-o"></i>win10-subsystem 修改安装目录</a>
@@ -549,10 +557,6 @@ ldconfig
     
       <li>
         <a href="/2018/10/11/win10-vmware-win10-windbg-kdnet-debug/" ><i class="fa fa-file-o"></i>WIN10 + vmware + WIN10_gues...</a>
-      </li>
-    
-      <li>
-        <a href="/2018/10/07/asp-net-razor-js/" ><i class="fa fa-file-o"></i>asp.net core razor js</a>
       </li>
     
   </ul>
