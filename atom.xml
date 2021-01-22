@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.dedbg.com/"/>
-  <updated>2020-12-29T02:29:45.490Z</updated>
+  <updated>2021-01-22T10:34:06.471Z</updated>
   <id>http://blog.dedbg.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>win10 condrv error</title>
+    <link href="http://blog.dedbg.com/2021/01/22/win10-condrv-error/"/>
+    <id>http://blog.dedbg.com/2021/01/22/win10-condrv-error/</id>
+    <published>2021-01-22T10:32:15.000Z</published>
+    <updated>2021-01-22T10:34:06.471Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+           &lt;figure class=&quot;highlight cpp&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span
+        
+      
+    
+    </summary>
+    
+    
+      <category term="c++" scheme="http://blog.dedbg.com/tags/c/"/>
+    
+      <category term="system" scheme="http://blog.dedbg.com/tags/system/"/>
+    
+  </entry>
   
   <entry>
     <title>lumen jwt init</title>
@@ -216,9 +242,9 @@
     </summary>
     
     
-      <category term="mvc" scheme="http://blog.dedbg.com/tags/mvc/"/>
-    
       <category term="linux" scheme="http://blog.dedbg.com/tags/linux/"/>
+    
+      <category term="mvc" scheme="http://blog.dedbg.com/tags/mvc/"/>
     
   </entry>
   
@@ -242,9 +268,9 @@
     </summary>
     
     
-      <category term="mvc" scheme="http://blog.dedbg.com/tags/mvc/"/>
-    
       <category term="linux" scheme="http://blog.dedbg.com/tags/linux/"/>
+    
+      <category term="mvc" scheme="http://blog.dedbg.com/tags/mvc/"/>
     
   </entry>
   
@@ -508,32 +534,6 @@ export
         
         
           &lt;p&gt;记录使用。&lt;br&gt;转载至： &lt;a href=&quot;http://blog.csdn.net/whatday/article/details/52493546&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;csdn链接&lt;/a&gt;&lt;br&gt;&lt;figure
-        
-      
-    
-    </summary>
-    
-    
-      <category term="kernel" scheme="http://blog.dedbg.com/tags/kernel/"/>
-    
-      <category term="debug" scheme="http://blog.dedbg.com/tags/debug/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>win7 sp1 让全系统可读ＰＵＢＧ</title>
-    <link href="http://blog.dedbg.com/2017/12/10/killbe/"/>
-    <id>http://blog.dedbg.com/2017/12/10/killbe/</id>
-    <published>2017-12-10T02:53:54.000Z</published>
-    <updated>2020-12-26T03:19:00.486Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;老版本可直接注册个object钩子即可全系统读写。&lt;br&gt;处理代码：&lt;br&gt;&lt;figure class=&quot;highlight c&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span
         
       
     

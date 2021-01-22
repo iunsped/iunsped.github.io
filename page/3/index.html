@@ -138,6 +138,40 @@ var _hmt = _hmt || [];
 <div class="row">
 	<div class="col-md-8">
 		<h3 class="title">
+			<a href="/2017/12/10/killbe/" >win7 sp1 让全系统可读ＰＵＢＧ</a>
+		</h3>
+		</div>
+	<div class="col-md-4">
+		<div class="date">post @ 2017-12-10  </div>
+		</div>
+	</div>
+	
+
+
+			<div class="entry">
+  <div class="row">
+	
+	
+		<p>老版本可直接注册个object钩子即可全系统读写。<br>处理代码：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">OB_PREOP_CALLBACK_STATUS <span class="title">preCall</span><span class="params">(PVOID RegistrationContext, POB_PRE_OPERATION_INFORMATION pOperationInformation)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (pOperationInformation-&gt;ObjectType != *PsProcessType)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">return</span> OB_PREOP_SUCCESS;</span><br><span class="line">	&#125;</span><br><span class="line">	UNREFERENCED_PARAMETER(RegistrationContext);</span><br><span class="line">	<span class="keyword">if</span> (!_stricmp(<span class="string">"TslGame.exe"</span>, PsGetProcessImageFileName((PEPROCESS)pOperationInformation-&gt;Object)))</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (pOperationInformation-&gt;Operation == OB_OPERATION_HANDLE_CREATE)</span><br><span class="line">		&#123;</span><br><span class="line">			pOperationInformation-&gt;Parameters-&gt;CreateHandleInformation.DesiredAccess = <span class="number">0x1F1FFF</span>;<span class="comment">//0x1F1FFF;</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> OB_PREOP_SUCCESS;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>前几日更新后发现无法读写获取等等。</p>
+<p>Process Hacker查看句柄发现：<br>0x1f1fff (Query information, Set information, Set quotas, Set session ID, Create threads, Create processes, VM operation, Duplicate handles, Suspend/resume, Terminate, Synchronize, Delete, Read control, Write DAC, Write owner)</p>
+<p>少了（VM read, VM write）</p>
+<p>简单处理方法：<br>2292        0xFFFFFA8005C8FB60        0x0000000000000000        9        0xFFFFF8800604E660        BEDaisy.sys        2326        等待<br>内核结束掉BE驱动的线程即可。<br>底层基础不好，未做仔细分析。</p>
+<p>代码如下：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">VOID <span class="title">PassBeThread</span><span class="params">(IN PVOID Nothing)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	DEF_StartAddress_Offset = GetStartAddressOffset();</span><br><span class="line">	<span class="keyword">if</span> (!DEF_StartAddress_Offset)</span><br><span class="line">	&#123;</span><br><span class="line">		DbgPrint(<span class="string">"Error offset\n"</span>);</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">while</span> (TRUE)</span><br><span class="line">	&#123;</span><br><span class="line">		bebase = GetKernelBase(&amp;besize, <span class="string">"BEDaisy.sys"</span>);</span><br><span class="line">		<span class="keyword">if</span> (bebase)</span><br><span class="line">		&#123;</span><br><span class="line">			KdPrint((<span class="string">"be mod[%p %.8x]\n"</span>, bebase, besize));</span><br><span class="line">			PETHREAD ethread = <span class="literal">NULL</span>;</span><br><span class="line">			<span class="keyword">for</span> (ULONG i = <span class="number">4</span>; i &lt; <span class="number">0x40000</span>; i = i + <span class="number">4</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">if</span> (!NT_SUCCESS(PsLookupThreadByThreadId((HANDLE)i, &amp;ethread)))</span><br><span class="line">				&#123;</span><br><span class="line">					<span class="keyword">continue</span>;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">if</span> (ethread != <span class="literal">NULL</span>)</span><br><span class="line">				&#123;</span><br><span class="line">					PEPROCESS eprocess = PsGetThreadProcess(ethread);</span><br><span class="line">					<span class="keyword">char</span> *szName = PsGetProcessImageFileName(eprocess);</span><br><span class="line">					PVOID startadr = GetThreadStartAdr(ethread);</span><br><span class="line">					<span class="keyword">if</span> (!_stricmp(szName, <span class="string">"System"</span>) &amp;&amp; IsBeMod(startadr))</span><br><span class="line">					&#123;</span><br><span class="line">						KdPrint((<span class="string">"%s %p %p\n"</span>, szName, ethread, startadr));</span><br><span class="line">						KillThread(ethread);</span><br><span class="line">						ObDereferenceObject(ethread);</span><br><span class="line">						<span class="keyword">break</span>;</span><br><span class="line">					&#125;</span><br><span class="line">					ObDereferenceObject(ethread);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		MySleep(<span class="number">1000</span>);</span><br><span class="line">		<span class="keyword">if</span> (iskillthread == <span class="number">1</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			KdPrint((<span class="string">"kill my thread!\n"</span>));</span><br><span class="line">			iskillthread = <span class="number">2</span>;</span><br><span class="line">			PsTerminateSystemThread(STATUS_SUCCESS);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>至此即可做任何操作。</p>
+
+	
+	</div>
+  <a type="button" href="/2017/12/10/killbe/#more" class="btn btn-default more">阅读此文</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->
+<div class="row">
+	<div class="col-md-8">
+		<h3 class="title">
 			<a href="/2017/11/05/20170611-ida-VMware/" >IDA + VMware 调试win7 x64</a>
 		</h3>
 		</div>
@@ -214,29 +248,33 @@ var _hmt = _hmt || [];
 		<h4>标签云</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
+			<li><a href="/tags/vc/">vc++<span>1</span></a></li>
+		
+			<li><a href="/tags/debug/">debug<span>11</span></a></li>
+		
 			<li><a href="/tags/linux/">linux<span>5</span></a></li>
+		
+			<li><a href="/tags/php/">php<span>2</span></a></li>
+		
+			<li><a href="/tags/asp-net-core/">asp.net core<span>1</span></a></li>
+		
+			<li><a href="/tags/laravel/">laravel<span>2</span></a></li>
+		
+			<li><a href="/tags/system/">system<span>1</span></a></li>
+		
+			<li><a href="/tags/Game/">Game<span>1</span></a></li>
+		
+			<li><a href="/tags/mvc/">mvc<span>3</span></a></li>
+		
+			<li><a href="/tags/Python/">Python<span>1</span></a></li>
+		
+			<li><a href="/tags/c/">c++<span>1</span></a></li>
 		
 			<li><a href="/tags/Linux/">Linux<span>1</span></a></li>
 		
 			<li><a href="/tags/ubuntu/">ubuntu<span>3</span></a></li>
 		
-			<li><a href="/tags/Game/">Game<span>1</span></a></li>
-		
-			<li><a href="/tags/Python/">Python<span>1</span></a></li>
-		
-			<li><a href="/tags/vc/">vc++<span>1</span></a></li>
-		
-			<li><a href="/tags/asp-net-core/">asp.net core<span>1</span></a></li>
-		
-			<li><a href="/tags/php/">php<span>2</span></a></li>
-		
-			<li><a href="/tags/laravel/">laravel<span>2</span></a></li>
-		
-			<li><a href="/tags/mvc/">mvc<span>3</span></a></li>
-		
 			<li><a href="/tags/kernel/">kernel<span>9</span></a></li>
-		
-			<li><a href="/tags/debug/">debug<span>11</span></a></li>
 		
 		 
 		</ul>
@@ -248,6 +286,10 @@ var _hmt = _hmt || [];
 <div class="widget">
   <h4>最新文章</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2021/01/22/win10-condrv-error/" ><i class="fa fa-file-o"></i>win10 condrv error</a>
+      </li>
     
       <li>
         <a href="/2020/12/29/lumen-jwt-init/" ><i class="fa fa-file-o"></i>lumen jwt init</a>
@@ -263,10 +305,6 @@ var _hmt = _hmt || [];
     
       <li>
         <a href="/2018/12/24/vs-github/" ><i class="fa fa-file-o"></i>vs.github</a>
-      </li>
-    
-      <li>
-        <a href="/2018/10/11/win10-vmware-win10-windbg-kdnet-debug/" ><i class="fa fa-file-o"></i>WIN10 + vmware + WIN10_gues...</a>
       </li>
     
   </ul>
